@@ -7,6 +7,8 @@ tags:
   - complex analysis
 ---
 
+Welcome to the complex analysis bootcamp. In this first set of problems we focus on basic properties of holomorphic functions and work up to branches of functions. 
+
 Resources
 ------
 Ahlfors chapter 2 and section 3.2.2
@@ -70,9 +72,9 @@ Define $V = \\{z: z^4 \in U\\}$ and prove that there exists a holomorphic functi
 <details>
 	<summary>Hint</summary>
 	Intuitively this is solved if we can let $g(z) = f(\sqrt[4]{z})$, but this is ill-defined unless we work with branches of $\sqrt[4]{z}$. 
-	Define two separate branch cuts of $\sqrt[4]{z}$ to find different canidates of $g(z)$ defined on different domains. Show that you can extend them to the union of their domains <br>
+	Define two separate branch cuts of $\sqrt[4]{z}$ to find different canidates of $g(z)$ defined on different domains. Try to "combine" these into one function. <br>
 
 
-	Additionally, you may find that this process only defines $g:V\setminus\{0\} \to \mathbb{C}$ due to all branch cuts excluding zero. 
+	You may find that this process only defines $g$ on $V\setminus\{0\}$ due to both branch cuts excluding zero. 
 	Recall that such a function can be extended analytically to 0 if $\lim_{z\to 0} zg(z) = 0$ (removable singularities; Ahlfors 4.3.1.) 
 </details>
