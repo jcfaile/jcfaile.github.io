@@ -48,6 +48,32 @@ Show that all conformal self maps of $\mathbb{D} = \\{z: |z| < 1\\}$ are of the 
 	If $T$ is our self map and $T(a) = 0$ make another map $S$ of the form above with $z_0 = a$. Then $T\circ S^{-1}$ is a self map which fixes zero. 
 </details>
 
+Problem 1
+------
+Let $U\subset \mathbb{C}$ be a simply connected open subset. 
+Suppose $\phi_1,\phi_2:U\to U$ are two conformal self maps and there exists $z_1,z_2$ such that $\phi_1(z_i) = \phi_2(z_i)$. 
+Show that $\phi_1 = \phi_2$. 
+<details>
+	<summary>Hint</summary>
+	First attempt this problem on the unit disk then extend this result to other regions via the Riemann mapping theorem. 
+</details>
+
+Problem 1 (Prelim August 2013)
+------
+Find all conformal self-maps of $U = \\{z: |z| > 0\\}$. 
+<details>
+	<summary>Hint</summary>
+	Transform this into a problem of self maps on the punctured disk. Since any such map is bounded the singularity at the isolated point is removable.
+	Extend the function on this singularity and show it results in a self map of the disk. 
+</details>
+
+Problem 1 (Prelim August 2021)
+------
+Find all conformal self maps of the half plane $H = \\{z: \text{Re}(z) > 0\\}$ such that $f(1/2) = 2$ and $f(2) = 1/2$. 
+<details>
+	<summary>Hint</summary>
+	Use the transformation between $H$ and the unit disk $\mathbb{D}$ to rephrase this problem on the disk. 
+</details>
 
 Problem 1 (Prelim August 2015)
 ------
@@ -63,6 +89,8 @@ show that $f_n \to 0$ uniformly on compact subsets of $U$.
 </details>
 
 
+
+
 Problem 1 (Prelim January 2002)
 ------
 Let $f:D\to \mathbb{C}$ be a holomorphic function satisfying $\text{Re}(f(z)) > 0$ for all $z\in D$ where $D\subset \mathbb{C}$. Show that there exists bounded holomorphic functions $g,h:D\to \mathbb{C}$ such that $$ f(z) = \frac{g(z)}{h(z)} $$
@@ -70,6 +98,5 @@ Let $f:D\to \mathbb{C}$ be a holomorphic function satisfying $\text{Re}(f(z)) > 
 	<summary>Hint</summary>
 	Consider the transformation between a half plane and the disk. 
 </details>
-
 
 
