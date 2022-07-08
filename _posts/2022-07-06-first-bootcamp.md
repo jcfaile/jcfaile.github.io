@@ -67,8 +67,9 @@ Suppose $f$ is a holomorphic function satisfying $|f(z)^2 - 1| < 1$ for all $z \
 
 Problem 7 (Prelim January 2014)
 ------
-Let $f: U \to \mathbb{C}$ be a holomorphic function satisfying $f(iz) = f(z)$ for all $z \in U$. 
-Define $V = \\{z: z^4 \in U\\}$ and prove that there exists a holomorphic function $g:V \to \mathbb{C}$ such that $f(z) = g(z^4)$. 
+Let $U\subset\mathbb{C}$ be open and define $V = \\{z:z^4 \in U\\}$. 
+Suppose $f: V \to \mathbb{C}$ is a holomorphic function satisfying $f(iz) = f(z)$ for all $z \in V$. 
+Prove that there exists a holomorphic function $g:U \to \mathbb{C}$ such that $f(z) = g(z^4)$ for all $z\in V$. 
 <details>
 	<summary>Hint</summary>
 	Intuitively this is solved if we can let $g(z) = f(\sqrt[4]{z})$, but this is ill-defined unless we work with branches of $\sqrt[4]{z}$. 
