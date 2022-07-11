@@ -59,7 +59,7 @@ What is the general form of a rational function $R$ satisfying $|R(z)| = 1 $ for
 
 Problem 3 (Ahlfors 2.1.4.5)
 ------
-What is the general form of a rational function $R$ satisfying $R(z) \in \mathbb{R}$ for all $|z| = 1$? How are the zeros and poles of $R$ related to one another?
+Suppose $R$ is a rational function satisfying $R(z) \in \mathbb{R}$ for all $|z| = 1$. How are the zeros and poles of $R$ related to one another?
 <details>
 	<summary>Hint</summary>
 	As in the last problem, we can deduce a relationship between \(R\) and \(\overline{R(1/\overline{z})}\) now using the additional fact that \(\overline{R(z)} = R(z)\). 
@@ -70,10 +70,8 @@ What is the general form of a rational function $R$ satisfying $R(z) \in \mathbb
 	Similar to the last problem, we find the relationship
 	$$R(z) = \overline{R(z)} = \overline{R\left(\frac{1}{\overline{z}}\right)} $$
 	which, by the same reasoning, is equal for all $z$ in the domain of $R$. 
-	We then find that $z$ is a root (resp. pole) of order m of $R$ if and only if $\overline{z}^{-1}$ is also root (resp. pole) of order $m$. 
-	Following similar steps to problem 2 we find
-	$$ R(z) = \alpha z^k\prod_{i=1}^n (z-z_i)^{o_i}(z-\overline{z_i}^{-1})^{o_i} \prod_{i=1}^n (z-\xi_i)^{p_i} $$
-	for the distinict roots and poles $\{z_i\}_{i=1}^n$ of orders $o_i$ (where this value is negative for poles) with $|z_i| < 1$ and $\{\xi_i\}_{i=1}^n the roots/poles with $|\xi_i| = 1$ of orders $p_i$, and this time we find $\alpha \in \mathbb{R}\setminus \{0\}$. 
+	We then find that $z$ is a root (resp. pole) of order $m$ of $R$ if and only if $\overline{z}^{-1}$ is also root (resp. pole) of order $m$. 
+	This allows us to classify all poles/roots if we know all poles/roots $z$ with $|z| \leq 1$, where $0 < |z| < 1$ come in pairs $(z,\overline z^{-1})$ and $|z| = 1$ are single roots. (Note - unlike the last problem its much more difficult to find the general form of these maps. This is because our rational factors $(1-z)(1-\overline{z}^{-1})$ aren't themselves maps sending the circle to the reals.)
 </details>
 
 Problem 4 (Ahlfors 2.2.4.2)
@@ -92,7 +90,7 @@ Write \[ \frac{2z+3}{z+1} \] as a power series in terms of $z-1$. Find the radiu
 		&= 1 - \frac{1}{2} \sum_{n=0}^\infty \left( - \frac{1}{2}\right)^n (z-1)^n
 	\end{align*} $$
 	for $n > 0 $ we see $|a_n| = 1/2^{n+1}$, so 
-	$$ 1/R = \limsup \sqrt[n]{1/2^{n+1}} = 1/2 $$ giving a radius of convergence of 2. 
+	$$ 1/R = \limsup_{n\to\infty} \sqrt[n]{1/2^{n+1}} = 1/2 $$ giving a radius of convergence of 2. 
 </details>
 
 Problem 5 (Ahlfors 3.2.2.2)
@@ -101,8 +99,8 @@ Give a precise definition of a branch of the function $\log \log(z)$.
 
 <details>
 	<summary>Solution</summary>
-	Define $U = \mathbb{C} \setminus \Ahlfors 2.1.4.5{z\in \mathbb{R}: z \leq 1\}$ then restrict the principle branch of $\log$ to $U$. 
-	We see $\log(U) = \{x+iy: x > 0\text{ or } 0 < |y| < \pi\}$ which lies in the domain of the principle branch of $\log$, hence our definition of $\log \log:U\to \mathbb{C}$ is a well defined single valued branch.
+	Define $U = \mathbb{C} \setminus \{z\in \mathbb{R}: z \leq 1\}$ then restrict the principle branch of $\log$ to $U$. 
+	We see $\log(U) = \{x+iy: |y| < \pi\} \setminus \mathbb{R}^-$ which lies in the domain of the principle branch of $\log$, hence our definition of $\log \log:U\to \mathbb{C}$ is a well defined single valued branch.
 </details>
 
 
@@ -134,18 +132,22 @@ Prove that there exists a holomorphic function $g:U \to \mathbb{C}$ such that $f
 	Define two separate branch cuts of $\sqrt[4]{z}$ to find different candidates of $g(z)$ defined on different domains. Try to "combine" these into one function. <br>
 
 
-	You may find that this process only defines $g$ on $V\setminus\{0\}$ due to both branch cuts excluding zero. 
+	You may find that this process only defines $g$ on $U\setminus\{0\}$ due to both branch cuts excluding zero. 
 	Recall that such a function can be extended analytically to 0 if $\lim_{z\to 0} zg(z) = 0$ (removable singularities; Ahlfors 4.3.1.) 
 </details>
 <details>
 	<summary>Solution</summary>
-	Let $ V_1 = \mathbb{C} \setminus \{a\in \mathbb{R}: a < 0\} $ and $V_2 = \mathbb{C} \setminus \{ia\in i\mathbb{R}: a < 0\}$. 
-	Define $s_1:V_1\to \mathbb{C}$ as the principle branch of $\sqrt[4]{z}$ and $s_2:V_2\to \mathbb{C}$ by $re^{i\theta} \mapsto \sqrt[4]{r}e^{i\theta / 4}$ for $r > 0$ and $-\pi/2 < \theta < 3\pi/2$. 
-	We then find that $g_i = f\circ s_i:V\cap V_i \to \mathbb{C}$ satisfies $f(z) = g_i(z^4)$ when $z^4$ is in the domain of $g_i$ (note that this requires our hypothesis that $f(z) = f(iz)$, for if $z$ is in the domain of any two branches of $\sqrt[4]{z}$ then the branches will differ by a factor of $i^k$.) 
-	This also means that $g_1 = g_2$ on $V\cap V_1 \cap V_2$. 
-	We can now extend both of these to $g:V\setminus \{0\} \to \mathbb{C}$ by defining $g(z) = g_1(z)$ for all $z \in V_1$ and $g(z) = g_2(z)$ when $z \in \mathbb{R}^{-}$. 
-	At every point in the domain $g$ is holomorphic, because we can construct a neighborhood of $z$ with $g= g_i$. 
-	Finally, we note that if $0 \in V$ then $0 \in U$ and we can select a neighborhood of $0$ such that $f$ is bounded. 
-	We then see that as $z\to 0$ we have $s_i(z) \to 0$ so $f(z)$ must remain bounded. Hence $\lim_{z\to 0} zf(z) = 0$ and the singularity at zero is removable, so we can extend $g$ analytically to a map $V\to \mathbb{C}$.
-		Finally, since $s_i(z) \to 0$ as $z\to 0$ we find $g(0) = g(0^4) = f(0)$ showing $g(z^4) = f(z)$ for all $z \in V$ as desired. 
+	As mentioned in the hint, we wish to rigorously write $g(z) := f(\sqrt[4]{z})$ for $z \in U$. 
+	Let $$ U_1 = \mathbb{C} \setminus \{ z: z \in \mathbb{R}^{-} \} \quad \text{and} \quad U_2 = \mathbb{C} \setminus \{z: z \in i\mathbb{R}^{-} \} $$
+	Define the two functions $s_1:U_1\to \mathbb{C}$ the principle branch of $\sqrt[4]{z}$ and $s_2:U_2\to \mathbb{C}$ by $re^{i\theta} \mapsto \sqrt[4]{r}e^{i\theta / 4}$ for $r > 0$ and $-\pi/2 < \theta < 3\pi/2$. 
+	Note that since $(s_i(z))^4 = z$ we have that $z \in U \implies s_i(z) \in V$, hence on $U_i$ the function $g_i = f\circ s_i$, $i = 1,2$ is well defined. 
+	Now if $z \in U_1\cap U_2$ it is possible that $s_1(z) \ne s_2(z)$, but they may differ only by a power of a forth root of unity. 
+	Therefore, $$ g_1(z) = f(s_1(z)) = f(i^ks_2(z)) = f(s_2(z)) = g_2(z) $$ showing the $g_i$ agree on $U_1\cap U_2$. 
+	As a result of this we can define $g:U\setminus \{0\} \to \mathbb{C}$ by $g(z) = g_1(z)$ for all $z\in U_1$ and $g(z) = g_2(z)$ for $z \notin U_2$ and $z \ne 0$. 
+	This resulting function is holomorphic, because for every $z$ we can select a neighborhood where $g = g_i$. 
+	Finally, if $0 \in U$ then $0\in V$ and since $f$ is holomorphic we can select a neighborhood of $0$ where $f$ is bounded. 
+	This allows us to evaluate the limit $$ \lim_{z\to 0} zg(z) = \lim_{z\to 0} zf(s_i) = \lim_{z\to 0} zM = 0$$ where $M$ is the bound of $f$ in the neighborhood of zero. 
+	This shows that the singularity of $g$ at zero is removable and we can extend $g$ holomorphically to all of $U$. 
+	Finally, taking the limit as $z\to 0$ of the identity $g(z^4) = f(z)$ we see the right hand side converges to $f(0)$ while the left converges to $g(0)$, showing that this identity holds over all of $U$ as desired. 
+
 </details>
