@@ -11,7 +11,7 @@ This set of problems focuses on conformal mappings.
 
 Resources
 ------
-Ahlfors chapter 3 (primarily 3.3, 3.4) and section 6.1.1 (the Riemann mapping theorem.) We will also assume the Schwarz lemma some problems (which is often necessary to show certain maps are unique) section 4.3.4 theorem 13.
+Ahlfors chapter 3 (primarily 3.3, 3.4) and section 6.1.1 (the Riemann mapping theorem.) We will also assume the Schwarz lemma for some problems (section 4.3.4 theorem 13.)
 
 Problems
 ======
