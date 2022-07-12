@@ -41,4 +41,12 @@ Problem 1
 	
 </details>
 
-
+Problem 1
+------
+Suppose that $f$ is analytic on the disk $|z| < 2$ except for a simple pole at $z = 1$ with residue $A$. 
+Show that \[ \lim_{n\to\infty} \frac{f^{(n)}(0)}{n!} = - A. \]
+<details>
+	<summary>Hint</summary>
+	Consider $g(z) := f(z) - A/(z-1)$ and try extend it to $z = 1$. 
+	What is its Taylor expansion?
+</details>
