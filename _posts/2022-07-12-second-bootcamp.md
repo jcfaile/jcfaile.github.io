@@ -23,6 +23,13 @@ Map the region between $|z| = 1$ and $|z-1/2| = 1/2$ on a half plane.
 	<summary>Hint</summary>
 	Invert at the common point to map both circles to half planes. 
 </details>
+<details>
+	<summary>Solution</summary>
+	These two curves intersect at $z = 1$ so using the map $z \mapsto 1/(z-1)$ both circles will map to the lines $i\mathbb{R} -1/2$ and $i\mathbb{R} - 1$, respectively. 
+	We can apply a linear transformation to turn the strip between these two lines into $\{x + iy: x \in \mathbb{R}, 0 < y < \pi\}$. 
+	From here observe that for values in this set $x+iy \mapsto e^{x+iy} = e^xe^{iy}$ delivers us the upper half plane. 
+</details>
+
 
 Problem 2 (Ahlfors 3.4.2.1)
 ------
@@ -42,8 +49,15 @@ Problem 4
 Show that all conformal self maps of $\mathbb{D} = \\{z: |z| < 1\\}$ are of the form $$ z\mapsto \alpha \frac{z - z_0}{1-\overline{z_0} z} $$ for a $z_0 \in \mathbb{D}$ and $|\alpha| = 1$. 
 <details>
 	<summary>Hint</summary>
-	Note that any map $\mathbb{D} \to \mathbb{D}$ that have no zeros must be constant. 
+	Note that any map $\mathbb{D} \to \mathbb{D}$ that has no zeros must be constant. 
 	If $T$ is our self map and $T(a) = 0$ make another map $S$ of the form above with $z_0 = a$. Then $T\circ S^{-1}$ is a self map which fixes zero. 
+</details>
+<details>
+	<summary>Solution</summary>
+	Following the hint, if there exists a point $z\in \mathbb{D}\setminus \{0\}$ such that $|T\circ S^{-1}(z)| = |z|$ then by the Schwarz lemma $T\circ S^{-1}(z) = \alpha z$ for some $|\alpha| = 1$.
+	Hence $T = \alpha S(z)$. <br>
+	If no such point exists then selecting any $z \in \mathbb{D} \setminus \{0\}$ we must have $|T\circ S^{-1}(z)| < |z|$, but then note that $(T\circ S^{-1})^{-1}$ is another self map of the disk.
+	Letting $w = T\circ S^{-1}(z)$ we see $$|z| = | (T\circ S^{-1})^{-1}(w)| \leq |w| < |z|$$ by the first inequality, hence no such $z$ exists. 
 </details>
 
 Problem 5
@@ -55,14 +69,37 @@ Show that $\phi_1 = \phi_2$.
 	<summary>Hint</summary>
 	First attempt this problem on the unit disk then extend this result to other regions via the Riemann mapping theorem. 
 </details>
+<details>
+	<summary>Solution</summary>
+	Taking $U$ to be the disk define $T= \phi_1^{-1} \circ \phi_2$. 
+	This is then a self map with the two fixed points $z_i$. 
+	Conjugating with a map $S$ of the form from problem 4 which maps $z_1 \mapsto 0$ we can take define $T' = S\circ T \circ S^{-1}$. 
+	This map now has the fixed points $0$ and $S(z_2)$. 
+	The Schwarz lemma allows us conclude $T'(z) = \alpha z$ with $|\alpha| = 1$, and since $S(z_2)$ is fixed we must have $\alpha = 1$. 
+	Hence $T$ is the identity. <br>
+	Finally, if $U$ is not the disk then the Riemann mapping theorem provides a biholomorphic map $R:U\to \mathbb{D}$ which sends $z_1 \mapsto 0$. 
+	From here, we see $R\circ T\circ R^{-1}$ fixes $0$ and $R(z_2)$ and we can repeat this same argument. 
+</details>
 
 Problem 6 (Prelim August 2013)
 ------
 Find all conformal self-maps of $U = \\{z: |z| > 0\\}$. 
 <details>
 	<summary>Hint</summary>
-	Transform this into a problem of self maps on the punctured disk. Since any such map is bounded the singularity at the isolated point is removable.
-	
+	Given a self map of $U$ we see it must either be bounded near $0$ or unbounded near zero. 
+</details>
+<details>
+	<summary>Solution</summary>
+	Let $T$ be such a map. If it is bounded near 0 we can extend it to a map $T:\mathbb{C} \mapsto \mathbb{C}$. 
+	To proceed, we must determine what $T(0)$ is.
+	Suppose that $T(0) \ne 0$. 
+	Then the original map has a preimage $a\in U$ and it follows by continuity that neighborhoods of $0$ and $a$ both map into neighborhoods of $T(a) = T(0)$, contradicting injectivity of our original map. 
+	Hence $T(0) = 0$. 
+	This makes $T$ a self map of $\mathbb{C}$ which must be a Möbius transformation fixing $0,\infty$, hence $T(z) = \alpha z$ for some $\alpha \ne 0$.
+	<br>
+	For the second case suppose that $T$ is a self map that is unbounded near zero. 
+	Note that since $T$ never attains the value zero the map $1/T:U\to U$ is then a self map that is bounded near $z = 0$. 
+	Hence in this case $T = \alpha z^{-1}$ for an $\alpha \ne 0$. 
 </details>
 
 Problem 7 (Prelim August 2021)
@@ -71,6 +108,11 @@ Find all conformal self maps of the half plane $H = \\{z: \text{Re}(z) > 0\\}$ s
 <details>
 	<summary>Hint</summary>
 	If you cannot think of a satisfactory self map try the transformation from $H$ to the disk $\mathbb{D}$. 
+</details>
+<details>
+	<summary>Solution</summary>
+	After some guess work you may find that $f(z) = 1/z$ is one such map (or if you followed the hint, on the unit disk $z\mapsto -z$ would be our candidate.)
+	It follows from problem 5 that $f$ is the unique map with this property. 
 </details>
 
 Problem 8 (Prelim August 2015)
@@ -86,7 +128,16 @@ show that $f_n \to 0$ uniformly on compact subsets of $U$.
 	Since we can take $U$ to be the disk we can apply the Schwarz lemma, giving us that $|f(z)| < |z|$ for all $z \in \mathbb{D}\setminus \{0\}$. Use this to construct a strong contraction over compact subsets of $U$. 
 
 </details>
-
+<details>
+	<summary>Solution</summary>
+	Let $R:U\to \mathbb{D}$ be the Riemann map fixing $0$. 
+	Then $g = R\circ f \circ R^{-1}$ is a map on the disk satisfying $g(0) = 0, |g'(0)| < 1$. 
+	Applying the Schwarz lemma we have $|g(z)| < |z|$ for all $z \ne 0$. 
+	Given any compact set $K\subset \mathbb{D}$ there exists a maximum value $c =  |g(z)/z|$ by continuity. 
+	Therefore, $|g(z)| \leq c|z|$ with $c < 1$ providing our strong contraction. 
+	Hence the corresponding sequence of functions $g_n$ have the property that $g_n \to 0$ uniformly on compact subsets of $\mathbb{D}$. 
+	Conjugating with $R^{-1}$ we then see that $f_n = R^{-1} g_n R \to 0$ uniformly on compact subsets of $U$. 
+</details>
 
 
 
@@ -97,6 +148,16 @@ Let $f:D\to \mathbb{C}$ be a holomorphic function satisfying $\text{Re}(f(z)) > 
 	<summary>Hint</summary>
 	Consider the transformation between a half plane and the disk. 
 </details>
+<details>
+	<summary>Solution</summary>
+	The Möbius transformation $$ S(z) = \frac{z - 1}{z + 1}$$ maps between the right half plane onto $\mathbb{D}$. 
+	We see that $S\circ f$ is now a holomorphic map from $D$ into $\mathbb{D}$. 
+	The inverse of this transformation is 
+	$$ S^{-1}(z) = \frac{z+1}{1-z}$$
+	This encourages us to define $$ g(z) = S\circ f(z) + 1\quad h(z) = 1 - S\circ f(z) $$
+	which are bounded as $S\circ f$ is bounded. It immediately follows that $g/h = S^{-1}\circ S \circ f = f$ as desired. 
+</details>
+
 
 Problem 10 (Prelim January 2017)
 ------
@@ -105,4 +166,22 @@ Find all conformal self maps of $\mathbb{C} \setminus \\{0,1\\}$.
 	<summary>Hint</summary>
 	Since the map must be bijective we determine the orders of the poles at $0, 1, \infty$ and whether or not they are removable. 
 	Additionally, use the fact that all self maps of $\mathbb{C}$ are Möbius transformations. 
+</details>
+<details>
+	<summary>Solution</summary>
+	At these three points we must have at least one pole/singularity (for, if not, the map will be bounded contradicting surjectivity.) 
+	It follows any of these must be simple poles, for poles of order $n > 1$ yield $n$ solutions to $f(z) = w$ for $w$ in a neighborhood of $\infty$ and $z$ in a neighborhood of the pole. 
+	Additionally, there is at most one pole (else points with substantially high norm will have two preimages around both poles.)
+	It then follows that the remaining two points must be removable singularities, since the function will be bounded in neighborhood of them. 
+	By the argument in problem 6 if we extend the map at these singularities they must map to one of $0$ or $1$.
+	This extended map is then a conformal self map of all of $\mathbb{C}$ and hence is a Möbius transformation permuting $0,1,\infty$. 
+	Since there are six permutations of these points we find the six maps
+	$$ \begin{align*}
+	0\mapsto 0, 1\mapsto 1, \infty \mapsto \infty & \quad z \\
+	0\mapsto 1, 1\mapsto 0, \infty \mapsto \infty & \quad 1 - z \\
+	0\mapsto \infty, 1\mapsto 1, \infty \mapsto 0 & \quad \frac{1}{z} \\
+	0 \mapsto 0, 1 \mapsto \infty, \infty \mapsto 1 & \quad \frac{z}{z-1} \\
+	0\mapsto 1 \mapsto \infty \mapsto 0 & \quad \frac{1}{1-z} \\
+	0 \mapsto \infty \mapsto 1 \mapsto 0 & \quad \frac{z - 1}{z}
+	\end{align*}$$
 </details>
