@@ -26,7 +26,7 @@ Show that there must exist a pole in $\mathbb{D}$.
 	If there is no pole in $\mathbb{D}$ how many poles can $f$ have elsewhere?
 </details>
 </li><li>
-b. Show that this pole cannot be simple.
+Show that this pole cannot be simple.
 <details>
 	<summary>Hint</summary>
 	Try integrating along a square with side lengths $\sqrt{2}$. 
@@ -66,27 +66,27 @@ Problem 1 (Prelim August 2020)
 Assume $f:\mathbb{C}\setminus \overline{\mathbb{D}} \to \mathbb{D}$ is holomorphic. Prove that $|f'(2)| \leq 1/3$.
 <details>
 	<summary>Hint 1</summary>
-	Precompose with $1/z$ to make this a map $\mathbb{D}\to \mathbb{D}$.
+	Precompose with $1/z$ and note the singularity at zero is removable to make this a map $\mathbb{D}\to \mathbb{D}$.
 </details>
 <details>
 	<summary>Hint 2</summary>
 	Use a mobius transformation on the disk that maps $1/2 \mapsto 0$. 
 	Then the Schwarz inequality gives a bound on the derivative at zero. 
-	This variant is called the "Schwarz-Pick" theorem. 
+	This related to the "Schwarz-Pick" theorem and its very handy have memorized. 
 </details>
 
 Problem 1 (Prelim August 2020)
 ------
-Suppose that $f$ is analytic on $\mathbb{D}$ and satisifies $|f(z)| \leq M$ for all $z\in \mathbb{D}$. Assume further that $f$ vanishes at the points $\\{z_j\\}_{j=1}^N$ where $1 \leq N \leq \infty$. 
+Suppose that $f$ is analytic on $\mathbb{D}$ and satisifies $|f(z)| \leq M$ for all $z\in \mathbb{D}$. Assume further that $f$ vanishes at the points $\\{z_j\\}_{j=1}^N$ where $1 \leq N \leq \infty$.)
 <ol><li> 
-Prove that \[ |f(z)| \leq M \left| \prod_{j=1}^m \frac{z-z_j}{1-\overline{z_j}z} \right|\quad \forall z\in\mathbb{D} \] for any $1 \leq m \leq N$ (or if $N = \infty$ then $1 \leq m < N$. 
+Prove that $$ |f(z)| \leq M \left| \prod_{j=1}^m \frac{z-z_j}{1-\overline{z_j}z} \right|\quad \forall z\in\mathbb{D} $$ for any $1 \leq m \leq N$ (or if $N = \infty$ then $1 \leq m < N$. 
 <details>
 	<summary>Hint</summary>
-	Consider the function $$ g(z) = \frac{f(z)}{\prod_{j=1}^m \frac{z-z_j}{1-\overline{z_j}z} }. $$ Are its singularities removable? What is $|g|$ as your approach $\partial \mathbb{D}$?
+	Consider the function $$ g(z) = \frac{f(z)}{\prod_{j=1}^m \frac{z-z_j}{1-\overline{z_j}z} }. $$ Are its singularities removable? What is $|g|$ as you approach $\partial \mathbb{D}$?
 </details>
 </li>
 <li>
-b) If $N = \infty$ and $f \ne 0$ then show that \[ \sum_{j=1}^\infty (1-|z_j|) < \infty
+If $N = \infty$ and $f \ne 0$ then show that $$ \sum_{j=1}^\infty (1-|z_j|) < \infty. $$
 <details>
 	<summary>Hint</summary>
 	
@@ -108,13 +108,13 @@ Problem 1 (Prelim January 2017)
 Prove that the range of the entire function $z\mapsto z^2 + \cos(z)$ is all of $\mathbb{C}$
 <details>
 	<summary>Hint</summary>
-	Picard's theorem tells us that this functions range can exclude at most one value. 
+	Picard's theorem tells us that this functions range can exclude at most one value. Use this to deduce that if this value exists it is in $\mathbb{R}$ then apply Rouche's theorem to show it does not exist. 
 </details> 
 
 Problem 1 (Prelim January 2011)
 ------
 Let $f$ be analytic in an anulus $ U = \\{z: r < |z| < R\\}$ where $0 < r < R$. 
-Assume $f$ has no zeros in $U$. Show there exists an integer $n$ and a holomorphic function $g:U\to \mathbb{C}$ such that $f(z) = z^n e^{g(z)}
+Assume $f$ has no zeros in $U$. Show there exists an integer $n$ and a holomorphic function $g:U\to \mathbb{C}$ such that $f(z) = z^n e^{g(z)}$
 <details>
 	<summary>Hint</summary>
 	What conditions must $f$ satisfy for this to be true with $n = 0$? If $\gamma$ is a simple closed curve in $U$ then what is the index $n(f\circ \gamma,0)$? Does it depend on $\gamma$?
@@ -125,7 +125,7 @@ Problem 1 (Prelim January 2016)
 Show that the equation $\sin(f(z)) = z$ has a solution $f$ that is analytic on the region $U = \\{z\in \mathbb{C}:|z| < 1\text{ or }\text{Im}(z) \ne 0\\}$. 
 <details>
 	<summary>Hint</summary>
-	Write $\sin(w)$ in terms of $e^{iw}$ and solve for it. What properties must be met to have a branch of $\log$ in $U$?
+	Write $\sin(w)$ in terms of $e^{iw}$ and solve for it. You will need to prove the existance of branches of two functions on $U$ to produce $f$. 
 </details>
 
 Problem 1 (Prelim August 2016)
@@ -144,4 +144,4 @@ Suppose $f$ is an entire function with the property that $f(z)$ is real if and o
 <details>
 	<summary>Hint</summary>
 	If $f'(w) = 0$ consider applying the argument principle to $f(w) - w$. 
-</details`>
+</details>

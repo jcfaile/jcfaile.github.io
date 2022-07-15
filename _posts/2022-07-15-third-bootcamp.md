@@ -18,11 +18,11 @@ Problems
 
 Problem 1
 ------
-When computing the Fourier transform of the function $x\mapsto e^{-x^2}$ one arrives at the integral $$ \int_L e^{-z^2}\, dz $$ where $L = \mathbb{R} + i\xi/2$. 
-Can you express this as an integral over the real axis? 
+Suppose $D = \\{z:|z-a| \leq r\\}$ for $a\in \mathbb{C}$ and $r > 0$. 
+For $f$ holomorphic in a neighborhood of $D$ prove the mean value property $$ f(a) = \frac{1}{2\pi} \int_{0}^{2\pi} f(a + re^{i\theta})\,d\theta. $$
 <details>
 	<summary>Hint</summary>
-	Consider integrating over rectangles with sides on both $L$ and $\mathbb{R}$. 
+	Consider writing $f(a)$ in terms of Cauchy's integral formula.
 </details>
 
 Problem 2 (Prelim August 2020)
