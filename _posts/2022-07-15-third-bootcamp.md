@@ -109,7 +109,12 @@ $$ \lim_{x\to \infty} f(x+iy) = L. $$
 	The real and imaginary parts of $f$ are maps $\mathbb{R}^2 \to \mathbb{R}$ so you may consider applying the mean value theorem on these parts. Then you can control the real/imaginary parts of $|f(x+iy) - f(x+iy_0)|$ with $|f'(x + i\xi)|, y < \xi < y_0$. 
 </details> 
 
-Problem 12 (Prelim August 2014)
+Problem 12 (Prelim January 2022)
+------
+Let $f$ be holomorphic and bounded on the upper half plane $H = \\{z: \text{Im } z > 0\\}$. 
+Suppose $f(z) = f(z+1)$ for all $z\in H$. Prove that $f(z)$ has a limit as $\text{Im }z \to \infty$. 
+
+Problem 13 (Prelim August 2014)
 ------
 Suppose $f$ is meromorphic on $\mathbb{D}\setminus\\{0\\}$ having poles at $z = 1/2,1/3,1/4,\dots$ Show that for every $r > 0$ the restriction of $f$ to $0 < |z| < r$ has dense image in $\mathbb{C}$. 
 <details>
