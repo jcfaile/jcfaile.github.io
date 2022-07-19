@@ -7,7 +7,7 @@ tags:
   - complex analysis
 ---
 
-This set of problems focuses on the residue theorem, argument principle, and mean value property.
+This set of problems focuses on the residue theorem, argument principle, and existence of branches.
 
 Resources
 ------
@@ -33,26 +33,26 @@ Show that this pole cannot be simple.
 </details>
 </li></ol>
 
-Problem 1 (Prelim January 1997)
+Problem 2 (Prelim January 1997)
 ------
 Suppose that $f$ is a holomorphic function on a neighborhood of $\overline{\mathbb{D}}$ and on $\partial \mathbb{D}$ $f$ satisfies $|f(z)| \leq a$ when $\text{Im}(z) \geq 0$ and $|f(z)| \leq b$ when $\text{Im}(z) \leq 0$. Show that
-\[ |f(z)| \leq \left(ab\right)^{1/2} \] for all $z \in \mathbb{D}$. 
+\[ |f(0)| \leq \left(ab\right)^{1/2}. \]
 <details>
 	<summary>Hint</summary>
 	Consider both $f(z)$ and $f(-z)$. 
 </details>
 
 
-Problem 1 (Prelim August 1996)
+Problem 3 (Prelim August 1996)
 ------
 Suppose $f$ is analytic on an open neighborhood of $\overline{\mathbb{D}}$ and that it is injective on $|z| = 1$. 
 Show that $f$ is injective on $\mathbb{D}$. 
 <details>
-	<summary>Hint</summary>
+		<summary>Hint</summary>
 	Apply the Jordan curve theorem. What can you deduce about solutions to $f(z) = w$ for arbitrary $w\in \mathbb{C}$? 
 </details>
 
-Problem 1 (Prelim January 2022)
+Problem 4 (Prelim January 2022)
 ------
 Let $K$ be a compact connected subset of $\mathbb{C}$ containing $\pm i$. 
 Show that there exists a holomorphic branch of $(z^2 + 1)^{1/2}$ in $\mathbb{C} \setminus K$ and determine the possible values of its integral along closed curves in $\mathbb{C} \setminus K$. 
@@ -61,7 +61,7 @@ Show that there exists a holomorphic branch of $(z^2 + 1)^{1/2}$ in $\mathbb{C} 
 	Recall that a branch of $\log f$ exists for a function $f$ on a domain $U$ if and only if $\int_\gamma f'/f\,dz = 0$ for all closed curves $\gamma:S^1\to U$. 
 </details>
 
-Problem 1 (Prelim August 2020)
+Problem 5 (Prelim August 2020)
 ------
 Assume $f:\mathbb{C}\setminus \overline{\mathbb{D}} \to \mathbb{D}$ is holomorphic. Prove that $|f'(2)| \leq 1/3$.
 <details>
@@ -75,25 +75,18 @@ Assume $f:\mathbb{C}\setminus \overline{\mathbb{D}} \to \mathbb{D}$ is holomorph
 	This related to the "Schwarz-Pick" theorem and its very handy have memorized. 
 </details>
 
-Problem 1 (Prelim August 2020)
+Problem 6 (Prelim August 2020)
 ------
-Suppose that $f$ is analytic on $\mathbb{D}$ and satisifies $|f(z)| \leq M$ for all $z\in \mathbb{D}$. Assume further that $f$ vanishes at the points $\\{z_j\\}_{j=1}^N$ where $1 \leq N \leq \infty$.)
-<ol><li> 
-Prove that $$ |f(z)| \leq M \left| \prod_{j=1}^m \frac{z-z_j}{1-\overline{z_j}z} \right|\quad \forall z\in\mathbb{D} $$ for any $1 \leq m \leq N$ (or if $N = \infty$ then $1 \leq m < N$. 
+Suppose that $f$ is analytic on $\mathbb{D}$ and satisifies $|f(z)| \leq M$ for all $z\in \mathbb{D}$. Assume further that $f$ vanishes at the points $ \\{z_j\\}_{j=1}^N $ where $1 \leq N \leq \infty$.)
+Prove that 
+<p> $$ |f(z)| \leq M \left| \prod_{j=1}^m \frac{z-z_j}{1-\overline{z_j}z} \right|\quad \forall z\in\mathbb{D} $$ </p>
+for any $1 \leq m \leq N$ (or if $N = \infty$ then $1 \leq m < N$. )
 <details>
 	<summary>Hint</summary>
 	Consider the function $$ g(z) = \frac{f(z)}{\prod_{j=1}^m \frac{z-z_j}{1-\overline{z_j}z} }. $$ Are its singularities removable? What is $|g|$ as you approach $\partial \mathbb{D}$?
 </details>
-</li>
-<li>
-If $N = \infty$ and $f \ne 0$ then show that $$ \sum_{j=1}^\infty (1-|z_j|) < \infty. $$
-<details>
-	<summary>Hint</summary>
-	
-</details>
-</li></ol>
 
-Problem 1 (Prelim January 2019)
+Problem 7 (Prelim January 2019)
 ------
 Given $z\in \mathbb{C}$ and a closed curve in $\mathbb{C}\setminus \\{z\\}$ denote $n(\gamma,z)$ the index or winding number of $\gamma$ about $z$. 
 If $\gamma$ can be written as \[ \gamma(t) = \sum_{k = -N}^{N} c_ke^{ikt} \]
@@ -103,7 +96,7 @@ with $c_{-N}$ and $c_N$ not both zero show that $-N \leq n(\gamma, z) \leq N$.
 	Can you relate this integral to an application of the argument principle on a suitable function?
 </details>
 
-Problem 1 (Prelim January 2017)
+Problem 8 (Prelim January 2017)
 ------
 Prove that the range of the entire function $z\mapsto z^2 + \cos(z)$ is all of $\mathbb{C}$
 <details>
@@ -111,7 +104,7 @@ Prove that the range of the entire function $z\mapsto z^2 + \cos(z)$ is all of $
 	Picard's theorem tells us that this functions range can exclude at most one value. Use this to deduce that if this value exists it is in $\mathbb{R}$ then apply Rouche's theorem to show it does not exist. 
 </details> 
 
-Problem 1 (Prelim January 2011)
+Problem 9 (Prelim January 2011)
 ------
 Let $f$ be analytic in an anulus $ U = \\{z: r < |z| < R\\}$ where $0 < r < R$. 
 Assume $f$ has no zeros in $U$. Show there exists an integer $n$ and a holomorphic function $g:U\to \mathbb{C}$ such that $f(z) = z^n e^{g(z)}$
@@ -120,7 +113,7 @@ Assume $f$ has no zeros in $U$. Show there exists an integer $n$ and a holomorph
 	What conditions must $f$ satisfy for this to be true with $n = 0$? If $\gamma$ is a simple closed curve in $U$ then what is the index $n(f\circ \gamma,0)$? Does it depend on $\gamma$?
 </details> 
 
-Problem 1 (Prelim January 2016)
+Problem 10 (Prelim January 2016)
 ------
 Show that the equation $\sin(f(z)) = z$ has a solution $f$ that is analytic on the region $U = \\{z\in \mathbb{C}:|z| < 1\text{ or }\text{Im}(z) \ne 0\\}$. 
 <details>
@@ -128,7 +121,7 @@ Show that the equation $\sin(f(z)) = z$ has a solution $f$ that is analytic on t
 	Write $\sin(w)$ in terms of $e^{iw}$ and solve for it. You will need to prove the existance of branches of two functions on $U$ to produce $f$. 
 </details>
 
-Problem 1 (Prelim August 2016)
+Problem 11 (Prelim August 2016)
 ------
 Evaluate the integrals  \[  I = \int_C \sqrt{1-z^2}\,dz \quad J = \int_{0}^\infty \frac{x\sin \pi x}{1-x^2}\,dx \] for some branch of the square root function (indicate which) and $C$ is the positively oriented circle $|z| = 2$. 
 <details>
@@ -138,7 +131,7 @@ Evaluate the integrals  \[  I = \int_C \sqrt{1-z^2}\,dz \quad J = \int_{0}^\inft
 
 
 
-Problem 1 (Prelim January 2014)
+Problem 12 (Prelim January 2014)
 ------
 Suppose $f$ is an entire function with the property that $f(z)$ is real if and only if $z$ is real. Show that $f'(z) \ne 0$ for all real $z$. 
 <details>

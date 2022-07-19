@@ -113,7 +113,7 @@ Show that $f$ must be a rational function.
 <details>
 	<summary>Solution</summary>
 	Let $K$ be the compact set outside of which $f$ is bounded. 
-	If $S$ is the set of poles of $f$ then note that $S$ cannot have an accumulation point, else we could find a sequence of values such that $(f(z))^{-1} = 0$ giving that $(f(z))^{-1}$ is the constant function $z\mapsto 0$. 
+	If $S$ is the set of poles of $f$ then note that $S$ cannot have an accumulation point as all singularities are isolated. 
 	Since $K$ is compact it then must follow that $S$ is finite, let $S = \{z_i\}_{i=1}^n$ and let each pole have corresponding order $m_i$. 
 	Then we can define $$g(z) = f(z) \prod_{i=1}^n (z-z_i)^{m_i}$$
 	and by hypothesis we find that off our set $K$ we have a bound $|g(z)| \leq M \prod_{i=1}^n (z-z_i)^{m_i}$. 
