@@ -9,3 +9,8 @@ ol > li:before {
 	content: counter(list, lower-alpha) ") ";
 	counter-increment: list;
 }
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
