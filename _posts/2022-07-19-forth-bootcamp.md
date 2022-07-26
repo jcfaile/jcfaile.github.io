@@ -220,7 +220,7 @@ Prove that the range of the entire function $z\mapsto z^2 + \cos(z)$ is all of $
 	On horizontal segments we note that $$|cos(z) - w| \geq \left| \frac{e^{\pm n} + e^{\mp n}}{2} - w \right| \geq \frac{1}{2} e^n - |w| $$
 	while $|f(z) - g(z)| = |z^2| = 4\pi^2n^2 + n^2$, hence if we take $n$ suitably large we find $$|f(z) - g(z)| < |f(z)| + |g(z)|$$ on the horizontal sides of $\Lambda$. 
 	On the vertical sides we note that $\cos(\pm 2\pi n + iy) = (e^y+e^{-y})/2 \geq 1 > w$, so $g(z) > 0$. 
-	The triangle inequality yields $|z^2| \leq |z^2 + \cos(z) - w| + |\cos(z) -w|$, and we know equality occurs if and only if both $f$ and $g$ are colinear at $z$. 
+	The triangle inequality yields $|z^2| \leq |z^2 + \cos(z) - w| + |\cos(z) -w|$, and we know equality occurs if and only if both $f$ and $-g$ point in the same direction at $z$. 
 	Since $\cos(z) - w  > 0 $ we see that for equality to occur must require $z^2 \in \mathbb{R}$ which can only occur if $z\in \mathbb{R}$ or $i\mathbb{R}$. 
 	The only points on the vertical edges satisfying this condition are $\pm 2n \pi$, but at these points we find 
 	$$ |4n^2 \pi^2| <| 4n^2 \pi^2 + 1 - w| + |1-w| $$
