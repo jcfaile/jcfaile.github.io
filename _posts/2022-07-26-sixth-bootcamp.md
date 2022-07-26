@@ -95,7 +95,7 @@ Prove that $f$ is holomorphic and one-to-one.
 <details>
 	<summary>Hint</summary>
 	Weierstrass' theorem tells us that $f$ will be holomorphic if we can upgrade our convergence from pointwise to uniform on compact sets. <br>
-	To determine the injectivity of $f$ consider the limit of 
+	To determine the injectivity of $f$ consider the limit of the argument principle applied to $f_n(z) - w$ for fixed $w \in \mathbb{C}.$
 </details>
 
 Problem 10 (Prelim January 2007)
