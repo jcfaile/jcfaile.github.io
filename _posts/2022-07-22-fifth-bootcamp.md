@@ -133,7 +133,7 @@ If $f(z) = 0$ whenever $\text{exp}(\text{exp }z) = 1$ show that $f = 0$.
 	This would contradict Hadamard's theorem if $f$ were non-constant, hence $f \equiv 0$. 
 </details>
 
-Problem 5 (Prelim August 25)
+Problem 5 (Prelim August 2014)
 ------
 Find a function $f$ holomorphic on $\mathbb{C} \setminus \mathbb{N}$ with a pole of order $n$ at $z = n$ for all positive integers $n$. 
 <details>
