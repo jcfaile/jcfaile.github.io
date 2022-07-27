@@ -75,7 +75,7 @@ Show that $f$ is injective on $\mathbb{D}$.
 <details>
 	<summary>Solution</summary>
 	Let $\gamma:[0,1] \to \partial \mathbb{D}$ be a parameterization of the unit circle. 
-	Since $f$ is injective we see that $f\circ \gamma$ is a simple closed curve, and by the Jordan curve theorem we see that $\mathbb{C}\setminus f\circ \gamma([0,1])$ has the two connected components $$ \begin{align*} U &= \{ z: n(f\circ \gamma,z) = 0 \} \\ V&= n(f\circ \gamma,z) = \pm 1\end{align*}$$
+	Since $f$ is injective we see that $f\circ \gamma$ is a simple closed curve, and by the Jordan curve theorem we see that $\mathbb{C}\setminus f\circ \gamma([0,1])$ has the two connected components $$ \begin{align*} U &= \{ z: n(f\circ \gamma,z) = 0 \} \\ V&= \{z:n(f\circ \gamma,z) = \pm 1\end{align*}\}$$
 	where the $\pm 1$ just depends on orientation. 
 	Using the argument principle we find that the number of solutions to $f(z) = w$ is $$ \frac{1}{2\pi i} \int_{\gamma} \frac{f'(z)}{f(z) - w}\,dz = \frac{1}{2\pi i} \int_{f\circ \gamma} \frac{1}{z-w}\,dz = n(f\circ \gamma,w) = 0\text{ or } \pm 1$$
 	hence $f(z) = w$ has at most one solution so $f$ must be injective.
@@ -115,7 +115,12 @@ Show that there exists a holomorphic branch of $(z^2 + 1)^{-1/2}$ in $\mathbb{C}
 	Hence we can locally define a holomorphic branch $l$ of $\log f$ on this domain and in $U$ $\text{exp}(h(z)) = \text{exp}(l(z))$ showing the left hand side is indeed holomorhpic at $z$. <br>
 	Finally, we must show that $\text{exp}(h(z))$ is indeed a branch of $f$. 
 	Differentiating $\text{exp}(2h(z))/(f(z))^2$ we find 
-	$$ \frac{d}{dz} \text{exp}(2h(z))(z^2 + 1) = h'(z)\text{exp}(2h(z))f(z) + 2z \text{exp}(2h(z))= 2\text{exp}(2h(z)) \left[ \frac{-z}{z^2 + 1} + \frac{z}{z^2 + 1}\right] = 0 $$
+	$$ 
+	\begin{align*}
+		\frac{d}{dz} \text{exp}(2h(z))(z^2 + 1) &= h'(z)\text{exp}(2h(z))f(z) + 2z \text{exp}(2h(z)) \\
+		&= 2\text{exp}(2h(z)) \left[ \frac{-z}{z^2 + 1} + \frac{z}{z^2 + 1}\right] = 0 
+	\end{align*} 
+	$$
 	showing that the functions are multiples of one another. Finally, evaluating at $z_0$ we see $\text{exp}(h(z_0)) = \text{exp}(l) = f(z_0)$ hence they are identical. 
 
 	<br>
@@ -124,9 +129,18 @@ Show that there exists a holomorphic branch of $(z^2 + 1)^{-1/2}$ in $\mathbb{C}
 	Then note our branch restricted to $\mathbb{C} \setminus \overline{B_r(0)}$ can be continued analytically to $\mathbb{C}\setminus [-i,i]$. 
 	Finally, we can construct a dumbbell contour along the segment $[-i,i]$ like so <br>
 	<img src="/assets/complex-ex-4/dumbbell_contour.png" class="center" alt="Dumbbell contour"><br>
-	this shows that integrating along a simple closed circle is equivalent to integrating up and down the segment $[-i,i]$, however when we swap directions we hop over our branch cut so the values will be negated. 
-	Going in one direction we find 
-	$$ \int_{[-i,i]} \frac{1}{\sqrt{1+z^2}}\,dz = \int_{-1}^1 \frac{i}{\sqrt{1-t^2}}\,dt = \pi i $$
+	On this contour we first note that as we shrink the dumbbell the contribution from the circular regions goes to zero. 
+	Indeed, at $i$ we can let $\gamma(\theta) = re^{i\theta} + i$, then $|(\gamma(\theta)^2 + 1)^{-1/2}| \leq [r(2-r)]^{-1/2}$ after factoring.
+	Then by the ML-lemma we find that 
+	$$ \begin{align*}
+		\left| \int_\gamma \sqrt{z^2 + 1} \, dz \right| &\leq L(\gamma)[r(2-r)]^{-1/2} \\
+		&= 2\pi \frac{\sqrt{r}}{\sqrt{2-r}} \to 0
+	\end{align*} $$
+	as $r\to 0$. 
+	This shows that integrating along a simple closed circle of radius $> 1$ is equivalent to integrating up and down the segment $[-i,i]$, however when we swap directions we hop over our branch cut so the values will be negated.
+	This negation is justified by the integral of $f'/f$ along any small circle around $\pm i$, which we know gives $\pm \pi i$ so apon exponetiating we will find the accross the branch cut our brach differs by a factor of $e^{i\pi}$. 
+	Integrating in one direction we find 
+	$$ \int_{[-i,i]} \frac{1}{\sqrt{1+z^2}}\,dz = \int_{-1}^1 \frac{i}{\sqrt{1-t^2}}\,dt = \pm \pi i $$
 	hence the integral over any closed curve will be an integer multiple of $2\pi i$. 
 </details>
 
@@ -153,8 +167,8 @@ Assume $f:\mathbb{C}\setminus \overline{\mathbb{D}} \to \mathbb{D}$ is holomorph
 	Letting both of these values approach an arbitrary $z \in \mathbb{D}$ we find
 	$$ |g'(z)| \leq \frac{1 - |g(z)|^2}{1 - |z|^2}$$
 	which leads us to 
-	$$ | -f'(2)z^{-2} | = \left| g'\left( \frac{1}{2}\right)\right| \leq \frac{1-|g(1/2)|}{1-(1/2)^2} \leq \frac{4}{3} $$
-	giving use the desired bound. 
+	$$ \left| -f'(2)\left(\frac{1}{2}\right)^{-2} \right| = \left| g'\left( \frac{1}{2}\right)\right| \leq \frac{1-|g(1/2)|}{1-(1/2)^2} \leq \frac{4}{3} $$
+	giving the desired bound. 
 </details> 
 
 Problem 6 (Prelim August 2020)
@@ -225,6 +239,7 @@ Prove that the range of the entire function $z\mapsto z^2 + \cos(z)$ is all of $
 	The only points on the vertical edges satisfying this condition are $\pm 2n \pi$, but at these points we find 
 	$$ |4n^2 \pi^2| <| 4n^2 \pi^2 + 1 - w| + |1-w| $$
 	hence showing $|f-g| < |f|+|g|$ on $\Lambda$. 
+	Finally, since $z\mapsto \cos z$ is surjective it follows $z\mapsto z^2 + \cos z$ is a surjective as well.
 	<br> <i>The main part of the argument using Rouche's theorem is modified from <a href="https://math.stackexchange.com/q/1300356">this answer</a>.</i>
 </details>
 
@@ -298,9 +313,10 @@ Evaluate the integrals  \[  I = \int_C \sqrt{1-z^2}\,dz \quad J = \int_{0}^\inft
 	In the limiting case as the width of tubes and circles goes to zero we arrive at the integral over $C$ being the same as $$2\int_{-1}^1 \sqrt{1-x^2}\,dx = \pi.$$
 	To check this, if $\gamma_r$ is a circle of radius $r$ at centered at one of $z = \pm 1$ we find that 
 	$$\left| \int_{\gamma_r} \sqrt{1-z^2} \,dz \right| \leq (2\pi r)\sup_{z\in \gamma_r} |\sqrt{1-z^2}| = C2\pi r^{3/2} \to 0$$ as $r \to 0$ by the ML inequality. 
-	Next we must justify the resulting integral by looking at our function along lines $x+ir$ as $r\to 0$. 
-	Along this branch cut we know that it will approach some value of $\sqrt{1-x^2}$, the branch either being on the positive or negative real axis. 
-	By our choice of branch, the limit from the top maps onto the positive reals as the integral $\int_{-1}^1 \sqrt{1-x^2}\,dx$ while from below it must map to the negative branch, but due to the orientation it is $\int_1^{-1} - \sqrt{1-x^2}$ summing to the desired integral.
+	Next we must justify the resulting integral by looking at our function along the line $0+ir$ as $r\to 0$. 
+	Along this branch cut we know that it will approach some value of $\sqrt{1-0^2}$, the branch either being on the positive or negative real axis. 
+	We can see that since $i \mapsto +\sqrt{2}$ that the away from the branch cut it is $>0$, but we also know that there are no roots of $1-z^2$ in $i\mathbb{R}$, hence it remains positive for all $r > 0$. This shows that on this side we approach the positive $+\sqrt{1-x^2}$.
+	To see that the other side converges to the negative branch, consider that the residues of $f'/f$ at its poles are $\pi i$, hence sign switches when going around $\pm 1$ (similar to the work done in problem 4.)
 
 	<br>
 	Another strategy is to use the substitution $u = z^{-1}$, which transforms integral to be over $|z| = 1/2$ with a single pole inside, allowing us to use the residue theorem. 
@@ -313,12 +329,12 @@ Evaluate the integrals  \[  I = \int_C \sqrt{1-z^2}\,dz \quad J = \int_{0}^\inft
 	First, note that on the largest semicircle we have 
 	$$ \begin{align*} \left| \int_{\gamma_R} f(x)\,dx \right| &\leq 2\int_0^{\pi/2} \frac{R^2}{R^2-1} e^{-\pi R\sin \theta}\,d\theta \\&\leq 2\int_0^{\pi/2} \frac{R^2}{R^2-1} e^{-2 R\theta}\,d\theta \\&=  \frac{R^2}{R^2 - 1} \left[ \frac{1}{2R} - \frac{1}{2R}e^{-\pi R} \right] \end{align*}$$
 	which converges to zero as $R \to \infty$. 
-	Now, taking the limit as $r\to 0$ of the small circles around the poles at $z = \pm 1$ we see that each circular arc's integral approaches $-\pi i\text{res}_{z = \pm 1}(f)$. 
+	Now, taking the limit as $r\to 0$ of the small circles around the poles at $z = \pm 1$ we see that each circular arc's integral approaches $-\pi i\text{res}_{z = \pm 1}(f)$ (this is because we can write $f(z) = R/(z-p) + g(z)$ where $R$ is the residue at $z = p$ and $g(z)$ is holomorphic near $z = p$. Integrating on the half arc will arrive at $-\pi i R.$ See Ahlfors 4.5.3.) 
 	Quick calculations show that
 	$$ \text{res}_{z=1}(f) = \text{res}_{z= -1}(f) = \frac{1}{2} $$
 	hence by applying Cauchy's theorem and letting $R\to \infty, r\to 0$ we find 
 	$$\int_\mathbb{R} f(z)\,dz = \pi i $$
-	and finally, equating imaginary parts and dividing by 2 (due to evenness of the integrad of $J$) we arrive at
+	and finally, equating imaginary parts and dividing by 2 (due to evenness of the integrad) we arrive at
 	$$ J = \frac{\pi}{2} $$
 </details>
 
@@ -336,5 +352,5 @@ Suppose $f$ is an entire function with the property that $f(z)$ is real if and o
 	$$ 4\pi i = \int_{\gamma_r} \frac{f'(z)}{f(z)}\,dz = 2\pi i n(f\circ \gamma_r,0).$$
 	Note however, that the curve $f\circ \gamma_r$ can only intersect the real axis twice - at $\theta = 0,\pi$. 
 	For $\theta \in (0,\pi)$ we must have that $f\circ \theta$ is entirely in the upper or lower half plane, and upon hitting $\mathbb{R}$ again at $\theta = \pi$ the argument will have either changed to $\pm \pi$ (in the case that $f(r),f(-r)$ have different signs) or $0$ (if the signs are identical.) 
-	Repeating this argument between $(\pi, 2\pi)$ we arrive at $n(f\circ \gamma_r,0) = \pm 1$ or $0$, which directly contradicts the existence of a double root at the origin. 
+	Repeating this argument between $(\pi, 2\pi)$ we arrive at $n(f\circ \gamma_r,0) = \pm 1$ or $0$, which contradicts the existence of a double root at the origin. 
 </details>
