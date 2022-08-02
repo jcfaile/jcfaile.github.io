@@ -195,23 +195,37 @@ Determine the partial fraction expansion for \[ \frac{1}{\sqrt{z} \sin \sqrt{z}}
 
 	<br>
 
-	To begin, let us expand in terms of $w= \sqrt{z}$. 
-	At $w = 0$ we have a pole of order $2$ and the second derivative of $(w\sin w)''|_{w = 0} = 1$ so we have singular part 
-	$$ \frac{1}{w^2}. $$
-	The remaining poles at $w = n \in \pi\mathbb{Z} \setminus \{0\}$ are simple and computing their residue we find the singular part at $w = \pi n$ is
-	$$ \begin{align*} \text{res}_{w = \pi n}(f) &= \lim_{w \to \pi n} (w-\pi n) \frac{1}{w\sin w} \\&= \lim_{w\to \pi n} \frac{1}{\sin w + w\cos w} = \frac{(-1)^n}{\pi n} \end{align*}$$ 
-	giving us the singular part $$\frac{(-1)^n}{\pi n (w-\pi n)}.$$
-	Now finally, note that if we pair the singularities at $w = \pm n \ne 0$ together we find their singular parts sum to 
-	$$\frac{(-1)^n}{\pi n (w-\pi n)} + \frac{(-1)^n}{-\pi n (w+\pi n)} = (-1)^n \frac{2}{w^2 - (n\pi)^2}$$
-	which allows us to write our Mittag-Leffler expansion without "fudge terms", as the above sum is uniformly convergent on compact sets. 
-	Our expansion is now
-	$$f(w) = g(w) + \frac{1}{w^2} + \sum_{n=1}^\infty (-1)^n \frac{2}{w^2 - (n\pi)^2}$$
-	Where $g$ is entire.
-	Letting $\text{Im }w \to \pm \infty$ we see that $g(w) \to 0$ (in fact, we can see that the maximum of $|g|$ in the region $\text{Im } w > r > 0$ is attained at $g(ir)$.)
-	Letting $r \to 0$ and noting that $g$ is even so the same is true on the lower half plane we find $|g(w)| \leq |g(0)|$ for all $w\in \mathbb{C}$. 
-	By Liouville's theorem we find $g \equiv 0$ and that our expansion is
-	$$ \frac{1}{\sqrt{z} \sin \sqrt{z}} = \frac{1}{z} + \sum_{n=1}^\infty (-1)^n \frac{2}{z - (n\pi)^2}. $$
-
+	This map isn't periodic so we can't replicate the reasoning in problem 6 to show $g$ is constant in this functions Mittag-Leffler expansion. 
+	Instead, let us consider the integral formula over an appropriate contour 
+	$$ \int_{R_N} \frac{1}{\xi - z} \frac{1}{\xi \sin (\xi )} \,d\xi $$
+	We know that when $z$ is not a pole of our meromorphic function ($z \notin \pi \mathbb{Z}$) then we can place a small circular contour around the function such that this integral evaluates to $2\pi i/(z \sin z)$. 
+	If we let $R_N$ be a large rectangle connecting to our small circular contour then we will be able to relate the sum of residues in the integral formula expression, $1/(z \sin z)$, and the integral over $R_N$. 
+	We will define the contour for $N \in \mathbb{N}$ by 
+	$$ R_N = \partial \left\{x + iy : |x| < \pi N^2+ \frac{\pi}{2}, |y| < N \right\}$$
+	(the choice of real and imaginary bounds will become clear once we bound the integral.) <br>
+	<img src="/assets/complex-ex-5/rect_contour.png" class="center" alt="Square contour"><br>
+	Then by the residue theorem
+	$$ \int_{R_n}\frac{1}{\xi - z} \frac{1}{\xi \sin (\xi )} \,d\xi - 2\pi i \frac{1}{z\sin(z)} = 2\pi i\sum_{n = -N^2}^{N^2} \text{Res}_{z = \pi n}(f) $$
+	where $f$ is the integrand. 
+	For $n \ne 0$ we see 
+	$$ \text{Res}_{z = 2\pi n}(f) = \lim_{\xi \to \pi n} \frac{\xi - \pi n}{\xi - z} \frac{1}{\xi \sin(\xi)} = \frac{(-1)^n}{(\pi n-z) \pi n} $$
+	and when $n = 0$
+	$$ \text{Res}_{z = 0}(f) = \lim_{\xi \to \pi n} \frac{d}{d \xi} \frac{\xi^2}{\xi - z} \frac{1}{\xi \sin(\xi)} = \frac{1}{z^2}.$$
+	Finally, if we can show the integral term converges to zero as $N \to \infty$ we will have a partial fractions decomposition of our function. 
+	Dividing $R_n$ into $\Gamma_1,\Gamma_2, \Gamma_3,\Gamma_4$ (as it is in the picture) we can apply the ML-lemma twice. 
+	Indeed, over either $\Gamma_1 + \Gamma_3$
+	$$ \left|\int_{\Gamma_1} f(\xi)\,d\xi\right| \leq L(\Gamma_1) \sup_{z \in \Gamma_1} |f(z)| \leq (2N^2+1)\pi \frac{2}{N \sinh(N)} \to 0$$ as $n\to \infty.$
+	Now for the vertical segments we note that since $x = \pm \pi (N^2 + 1/2)$ we have
+	$$ \begin{align*} 
+		\sin(x + iy) &= \frac{e^{i(\pi N^2 + \pi/2) - y} - e^{-i(\pi N^2 + \pi/2) + y}}{2} \\
+		&= (-1)^N i \frac{e^{-y} + e^y}{2} = (-1)^N i \cosh(y)
+	\end{align*} $$
+	and since $\cosh$ has minimum value $1$ the ML-lemma on $\Gamma_2$ and $\Gamma_4$ gives
+	$$ \left|\int_{\Gamma_2} f(\xi)\,d\xi\right| \leq L(\Gamma_2) \sup_{z \in \Gamma_2} |f(z)| \leq 2N \frac{1}{\pi N^2} \to 0$$
+	as $N\to \infty$. 
+	As a result, taking the limit as $N\to \infty$ of residue theorem expression yields
+	$$ \frac{1}{z\sin(z)} = \frac{1}{z^2} + \lim_{N\to \infty}\sum_{n=-N}^N \frac{(-1)^n}{(z-\pi n)\pi n} = \frac{1}{z^2} + \lim_{N\to \infty}\sum_{n=-N}^N (-1)^n\frac{2}{z^2-(\pi n)^2} $$
+	and since all powers of $z$ are even we can substitute in the square root, simply halving these powers. 
 </details>
 
 
@@ -221,21 +235,34 @@ Prove that \[ \frac{d}{dz} \left( \frac{\pi \sin(z)}{\sin(\pi z)} \right) = \sum
 for all $z\in \mathbb{C}\setminus \mathbb{Z}$, with the sum on the right hand side converging uniformly on every compact subset of $\mathbb{C}\setminus \mathbb{Z}$. 
 <details>
 	<summary>Hint</summary>
-	Apply Mittag-Leffler before differentiating. For the resulting entire function consider its behavior as $\text{Im}(z) \to \pm \infty$. 
+	This function will provide a nasty decomposition if we just use Mittag-Leffler. Instead consider computing the derivative using the integral formula, then expanding the contour we will gain an "error" equal to the sum of some residues.  
 </details>
 <details>
 	<summary>Solution</summary>
-	We see that there is a simple pole at every $z \in \mathbb{Z} \setminus \{0\}$ and a removable singularity at $z = 0$. 
-	At $z = n\in \mathbb{Z}\setminus \{0\}$ we calculate the residue as
-	$$\text{res}_{z = n}(f) = \lim_{z\to n} (z-n)\frac{\pi \sin(z)}{\sin(\pi z)} = \frac{\pi \sin(n)}{\pi \cos(\pi n)} = (-1)^n \sin(n). $$
-	Next, we note that 
-	$$ \sum_{n=-\infty}^\infty (-1)^n \left(\frac{\sin(n)}{z-n} + \frac{\sin(n)}{n}\right) =  \sum_{n=-\infty}^\infty (-1)^n \frac{z\sin(n)}{n(z-n)}$$
-	which can be bounded by $\sum 1/n^2$ on compact sets. 
-	Hence by Mittag-Leffler there is an entire function $g$ such that 
-	$$ \frac{\pi \sin(z)}{\sin(\pi z)} = g(z) + \sum_{n=-\infty}^\infty (-1)^n \left(\frac{\sin(n)}{z-n} + \frac{\sin(n)}{n}\right). $$
-	Now we note that $g$ has the property that $g(z) \to 0$ as $\text{Im }z \to \pm \infty$. 
-	Since $g$ is bounded away from the real line it is constant, and as a result $g' \equiv 0$.
-	Differentiating the expansion of $f$ then yields the desired series. 
+	We will slightly modify the contour from problem 7 to 
+	$$ R_N = \partial \left\{x + iy : |x| < N^2+ \frac{1}{2}, |y| < N \right\} $$
+	and note we have the relationship 
+	$$ \int_{R_n}\frac{1}{(\xi - z)^2} \frac{\pi \sin(\xi)}{\sin (\pi \xi)} \,d\xi - 2\pi i \frac{d}{d\xi} \left(\frac{1}{\xi\sin(\xi)}\right)_{\xi = z} = 2\pi i\sum_{n = -N^2}^{N^2} \text{Res}_{z = \pi n}(f) $$
+	where $f$ is the integrand on the left.
+	We have poles at every $\xi\in \mathbb{Z} \setminus \{0\}$, at $\xi = n$ we find the residue 
+	$$ \text{Res}_{\xi = n}(f) = \lim_{\xi \to n} \frac{\xi - n}{(\xi - z)^2} \frac{\pi \sin(\xi)}{\sin (\pi \xi)} = \frac{(-1)^{n}\sin(n)}{(z-n)^2} $$
+	From here we just need to show the integral shrinks to zero as $N\to \infty$. 
+	Indeed, for $\Gamma_1,\Gamma_3$ the ML-lemma gives 
+	$$ \left| \int_{\Gamma_1} f\,d\xi\right| \leq L(\Gamma_1)\sup_{z\in \Gamma_1}|f(z)| \leq (2N+1) \frac{\pi \cosh(N)}{\sinh(\pi N)} \to 0$$ as $N\to \infty$ as $\pi > 1$.
+	Now for the vertical segments $\Gamma_2, \Gamma_4$ we can employ the same lower bound on $\sin$ over these segments as was used in problem 7. We see 
+	$$ \left| \frac{\pi \sin(z)}{\sin(\pi z)} \right| \leq \left| \frac{\pi \cosh(y)}{\cosh(\pi y)} \right| \leq \pi $$ when $\text{Re}(z) = N^2 + 1/2$
+	hence the ML-lemma gives 
+	$$ \left| \int_{\Gamma_2} f\,d\xi\right| \leq L(\Gamma_2)\sup_{z\in \Gamma_2}|f(z)| \leq 2N \frac{\pi \cosh(N)}{\cosh(\pi N)} \to 0$$ 
+	as $N \to \infty$. 
+	This establishes the equality 
+	$$ \frac{d}{dz} \left( \frac{\pi \sin(z)}{\sin(\pi z)} \right) = \sum_{n=-\infty}^\infty \frac{(-1)^{n+1} \sin(n)}{(z-n)^2} $$
+	pointwise. 
+	If $K$ is any compact set avoiding the poles of our function then for all $z\in K$ we have $|z| < M$. 
+	We can then see that for indices $n > M$ we have
+	$$ \left| \frac{(-1)^{n+1} \sin(n)}{(z-n)^2} \right| \leq \frac{1}{(M - n)^2} $$
+	and for $n < -M$ we find 
+	$$ \left| \frac{(-1)^{n+1} \sin(n)}{(z-n)^2} \right| \leq \frac{1}{(-M - n)^2} $$
+	In both cases the modulus of the terms are $O(n^{-2})$ and we know $\sum_{n=1}^\infty n^{-2}$ is a convergent series, hence by the M-test convergence over $K$ is uniform. 
 </details>
 
 
