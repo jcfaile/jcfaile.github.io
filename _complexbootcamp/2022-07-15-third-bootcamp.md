@@ -1,7 +1,7 @@
 ---
 title: 'Complex Bootcamp Exercises: Integration I'
 date: 2022-07-15
-permalink: /posts/2022/07/bootcamp-2022-ex-3/
+permalink: /complex-prelim-bootcamp/2022/07/bootcamp-2022-ex-3/
 tags:
   - bootcamp
   - complex analysis

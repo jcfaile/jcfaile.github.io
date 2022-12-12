@@ -13,7 +13,10 @@ main:
   #  url: /portfolio/
         
   - title: "Blog Posts"
-    url: /year-archive/
+    url: /posts/
+
+  - title: "Complex Prelim Resources"
+    url: /complex-prelim-bootcamp/
     
   #- title: "CV"
   #  url: /cv/

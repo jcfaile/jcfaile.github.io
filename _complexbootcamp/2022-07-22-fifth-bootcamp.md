@@ -1,7 +1,7 @@
 ---
 title: 'Complex Bootcamp Exercises: Products and Series'
 date: 2022-07-22
-permalink: /posts/2022/07/bootcamp-2022-ex-5/
+permalink: /complex-prelim-bootcamp/2022/07/bootcamp-2022-ex-5/
 tags:
   - bootcamp
   - complex analysis

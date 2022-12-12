@@ -8,7 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my homepage. This is currently a work in progress. 
+Welcome to my homepage. I mostly plan to use this to host educational materials I have made and my academic work at UT. 
+
+For the Spring 2023 semester I will be reading with Professor Alexis Vassuer. 
 
 
 

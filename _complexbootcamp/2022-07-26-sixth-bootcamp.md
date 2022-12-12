@@ -1,7 +1,7 @@
 ---
 title: 'Complex Bootcamp Exercises: Normal Families'
 date: 2022-07-26
-permalink: /posts/2022/07/bootcamp-2022-ex-6/
+permalink: /complex-prelim-bootcamp/2022/07/bootcamp-2022-ex-6/
 tags:
   - bootcamp
   - complex analysis

@@ -1,7 +1,7 @@
 ---
 title: 'Complex Bootcamp Exercises: Conformal Maps'
 date: 2022-07-12
-permalink: /posts/2022/07/bootcamp-2022-ex-2/
+permalink: /complex-prelim-bootcamp/2022/07/bootcamp-2022-ex-2/
 tags:
   - bootcamp
   - complex analysis

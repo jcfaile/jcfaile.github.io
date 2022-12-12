@@ -1,7 +1,7 @@
 ---
 title: 'Complex Bootcamp Exercises: Basics of Holomorphic Functions'
 date: 2022-07-06
-permalink: /posts/2022/07/bootcamp-2022-ex-1/
+permalink: /complex-prelim-bootcamp/2022/07/bootcamp-2022-ex-1/
 tags:
   - bootcamp
   - complex analysis
