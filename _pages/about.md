@@ -10,7 +10,7 @@ redirect_from:
 
 Welcome to my homepage. Currently this website hosts educational materials I have made while at UT. 
 
-For the Spring 2023 semester I will be reading with Professor Alexis Vassuer. 
+I am currently reading with Professor Alexis Vassuer on systems of hyperbolic conservation laws. 
 
 
 
