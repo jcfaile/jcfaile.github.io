@@ -203,7 +203,7 @@ Determine the partial fraction expansion for \[ \frac{1}{\sqrt{z} \sin \sqrt{z}}
 	We will define the contour for $N \in \mathbb{N}$ by 
 	$$ R_N = \partial \left\{x + iy : |x| < \pi N^2+ \frac{\pi}{2}, |y| < N \right\}$$
 	(the choice of real and imaginary bounds will become clear once we bound the integral.) <br>
-	<img src="/assets/complex-ex-5/rect_contour.png" class="center" alt="Square contour"><br>
+	<img src="{{ site.baseurl }}/assets/complex-ex-5/rect_contour.png" class="center" alt="Square contour"><br>
 	Then by the residue theorem
 	$$ \int_{R_n}\frac{1}{\xi - z} \frac{1}{\xi \sin (\xi )} \,d\xi - 2\pi i \frac{1}{z\sin(z)} = 2\pi i\sum_{n = -N^2}^{N^2} \text{Res}_{z = \pi n}(f) $$
 	where $f$ is the integrand. 
@@ -324,7 +324,7 @@ Let $D_2 \subset D_1$ be two disks in $\mathbb{C}$ with $D_1$ open and $D_2$ clo
 <details>
 	<summary>Solution</summary>
 	Choose circular contours $C_1,C_2$ where $C_1 \subset D_1$ is a slightly smaller concentric circle to the boundary of $D_1$ while $C_2$ is a slightly larger concentric circle to $D_2$. We will also give $C_1$ and $C_2$ circles positive and negative orientation, respectively. <br>
-	<img src="/assets/complex-ex-5/p12_contour.png" class="center" alt="A contour connecting two circles, one contained within the other."><br>
+	<img src="{{ site.baseurl }}/assets/complex-ex-5/p12_contour.png" class="center" alt="A contour connecting two circles, one contained within the other."><br>
 	We see that the interior of the path formed by their disjoint union is contained in $D_1\setminus D_2$ hence we can apply the integral formula
 	$$ f(z) = \int_{C_1} \frac{f(\xi)}{\xi - z}\,d\xi + \int_{C^2} \frac{f(\xi)}{\xi - z}\,dx =: f_1(z)+f_2(z). $$
 	The functions $f_i$ are holomorphic by the general theory set out in Ahlfors 4.2.

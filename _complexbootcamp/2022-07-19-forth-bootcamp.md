@@ -41,7 +41,7 @@ Show that this pole cannot be simple.
 <details>
 	<summary>Solution</summary>
 	We can parameterize a path along the square from part (a) by $\gamma:[0,1] \to \mathbb{C}$ a piecewise linear function $\gamma$ <br>
-	<img src="/assets/complex-ex-4/square_contour.png" class="center" alt="Square contour"><br>
+	<img src="{{ site.baseurl }}/assets/complex-ex-4/square_contour.png" class="center" alt="Square contour"><br>
 	Note that due to the period, the values of $f$ along $\gamma_1$ and $\gamma_2$ are identical, however we are now traversing in the opposite direction so $\gamma_1' = -\gamma_2'$. 
 	This gives us the relationship 
 	$$ \begin{align*} \int_{\gamma_2} f\,dz &= \int_{0}^{1/4} \gamma'_2(t+1/2) f(\gamma_2(t+1/2))\,dt \\&= -\int_{1/4}^0 \gamma_2'(3/4-u) f(\gamma_2(3/4 - u))\,du \\&= -\int_0^{1/4} \gamma_1'(u)f(\gamma_1(u))\,du = - \int_{\gamma_1} f\,dz\end{align*}$$
@@ -123,12 +123,12 @@ Show that there exists a holomorphic branch of $(z^2 + 1)^{-1/2}$ in $\mathbb{C}
 	$$
 	showing that the functions are multiples of one another. Finally, evaluating at $z_0$ we see $\text{exp}(h(z_0)) = \text{exp}(l) = f(z_0)$ hence they are identical. 
 
-	<br>
+	<br><i>Original solution to second part</i><br>
 	To compute the integral of this branch over a closed curve first note that any such curve $\gamma$ can be replaced by a curve on a circle of radius $> R$ with the same integral (due to Cauchy's theorem.)
 	We can let $R$ be greater the largest modulus attained on $K$. 
 	Then note our branch restricted to $\mathbb{C} \setminus \overline{B_r(0)}$ can be continued analytically to $\mathbb{C}\setminus [-i,i]$. 
 	Finally, we can construct a dumbbell contour along the segment $[-i,i]$ like so <br>
-	<img src="/assets/complex-ex-4/dumbbell_contour.png" class="center" alt="Dumbbell contour"><br>
+	<img src="{{site.baseurl}}/assets/complex-ex-4/dumbbell_contour.png" class="center" alt="Dumbbell contour"><br>
 	On this contour we first note that as we shrink the dumbbell the contribution from the circular regions goes to zero. 
 	Indeed, at $i$ we can let $\gamma(\theta) = re^{i\theta} + i$, then $|(\gamma(\theta)^2 + 1)^{-1/2}| \leq [r(2-r)]^{-1/2}$ after factoring.
 	Then by the ML-lemma we find that 
@@ -138,10 +138,20 @@ Show that there exists a holomorphic branch of $(z^2 + 1)^{-1/2}$ in $\mathbb{C}
 	\end{align*} $$
 	as $r\to 0$. 
 	This shows that integrating along a simple closed circle of radius $> 1$ is equivalent to integrating up and down the segment $[-i,i]$, however when we swap directions we hop over our branch cut so the values will be negated.
-	This negation is justified by the integral of $f'/f$ along any small circle around $\pm i$, which we know gives $\pm \pi i$ so apon exponetiating we will find the accross the branch cut our brach differs by a factor of $e^{i\pi}$. 
+	This negation is justified by the integral of $f'/f$ along any small circle around $\pm i$, which we know gives $\pm \pi i$ so upon exponetiating we will find the across the branch cut our brach differs by a factor of $e^{i\pi}$. 
 	Integrating in one direction we find 
 	$$ \int_{[-i,i]} \frac{1}{\sqrt{1+z^2}}\,dz = \int_{-1}^1 \frac{i}{\sqrt{1-t^2}}\,dt = \pm \pi i $$
 	hence the integral over any closed curve will be an integer multiple of $2\pi i$. 
+
+	<br><i>Toby's solution to second part</i><br>
+	Observe that 
+	$$ \left( (1+z^2)^{-1/2} - \frac{1}{z} \right)\left( (1+z^2)^{-1/2} + \frac{1}{z} \right) = \frac{1}{1+z^2} - \frac{1}{z^2} = -\frac{1}{z^2 + z^4} $$
+	which, for $|z| > 1$, has absolute value below $1/|z|^4$. 
+	Using the triangle inequality we find 
+	$$ \left| \int_\gamma (1+z^2)^{-1/2} \,dz - \int_\gamma \frac{1}{z} \,dz \right| \leq \int_\gamma \left| \frac{1}{z^4} \right|\,dz  \leq \text{Length}(\gamma) \sup |\gamma(t)|^{-4}.$$
+	Finally, we note that we can homotope $\gamma$ into a sequence of circular loops with arbitrarily large radius $R$, so the right hand side becomes $\leq 2\pi R\cdot R^{-4} \to 0$ as $R\to \infty$, establishing
+	$$ \int_\gamma (1+z^2)^{-1/2} \,dz = \int_\gamma \frac{1}{z} \,dz = 2\pi n$$
+	for some $n\in \mathbb{Z}$. 
 </details>
 
 Problem 5 (Prelim August 2020)
@@ -324,7 +334,7 @@ Evaluate the integrals  \[  I = \int_C \sqrt{1-z^2}\,dz \quad J = \int_{0}^\inft
 
 	<br>
 	For $J$ consider the contour that is a large semicircle of radius $R > 0$ with smaller semicircles of radius $r$ cut out at the points $z = \pm 1$. <br>
-	<img src="/assets/complex-ex-4/circle_contour.png" class="center" alt="Circular contour avoiding poles on real axis"><br>
+	<img src="{{ site.baseurl }}/assets/complex-ex-4/circle_contour.png" class="center" alt="Circular contour avoiding poles on real axis"><br>
 	Over this contour we will integrate $$ f(z) = \frac{z e^{\pi i z}}{1-z^2}.$$
 	First, note that on the largest semicircle we have 
 	$$ \begin{align*} \left| \int_{\gamma_R} f(x)\,dx \right| &\leq 2\int_0^{\pi/2} \frac{R^2}{R^2-1} e^{-\pi R\sin \theta}\,d\theta \\&\leq 2\int_0^{\pi/2} \frac{R^2}{R^2-1} e^{-2 R\theta}\,d\theta \\&=  \frac{R^2}{R^2 - 1} \left[ \frac{1}{2R} - \frac{1}{2R}e^{-\pi R} \right] \end{align*}$$
