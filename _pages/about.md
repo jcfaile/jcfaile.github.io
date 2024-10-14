@@ -8,9 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my homepage. Currently this website hosts educational materials I have made while at UT. 
-
-I am currently reading with Professor Alexis Vasseur on systems of hyperbolic conservation laws. 
+I am currently working on shockwave stability for hyperbolic systems of conservation laws with Professor Alexis Vasseur. 
 
 
 

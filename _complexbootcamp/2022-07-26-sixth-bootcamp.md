@@ -120,7 +120,7 @@ If the sequences $\{ f_n(k) \}_{n=1}^\infty$ converge for each integer $k > 1$ t
 	Additionally, we have that $\{g_n(1/k)\}_{n=1}^\infty$ defines a convergent sequence of complex numbers. 
 	By Montel's theorem the family $\{g_n\}_{n=1}^\infty$ is normal. 
 	Pick any subsequence of $\{g_n\}$, then by normality it has a sub-subsequence converging to some holomorphic function $g:\mathbb{D} \to \overline{\mathbb{D}}$. 
-	Suppose we do this process again on a different subsequence, then we recieve a subsequence converging to a $\tilde g$. 
+	Suppose we do this process again on a different subsequence, then we receive a subsequence converging to a $\tilde g$. 
 	Now since the sequence $\{g_n(1/k)\}_{n=1}^\infty$ is convergent for every integer $k > 1$ we have
 	$$ g\left( \frac{1}{k} \right) = \lim_{n\to \infty} g_{a_n}\left(\frac{1}{k} \right) = \lim_{n\to \infty} g_{b_n}\left(\frac{1}{k} \right) = \tilde g\left( \frac{1}{k} \right).$$
 	The set $\{1/k: k \in \mathbb{Z}^{>1}\}$ has an accumulation point $z = 0$ within the domains of $g,\tilde g$ and hence by the identity theorem it follows that $g \equiv \tilde g$. 
@@ -197,7 +197,7 @@ Prove that for any simply connected open subset of the complex plane, there exis
 	This immediately can be used to define a function by power series
 	$$ f(z) = \sum_{n=1}^\infty z^{2^k} $$
 	which has radius of convergence $1$. 
-	At $z = e^{ir\pi}$ we see 
+	At $z = e^{\pi i r}$ we see 
 	$$f (z) = \sum_{n=1}^\infty e^{2^k i \pi r} = \sum_{n=1}^N e^{2^k i \pi r} + \sum_{i=N+1}^\infty 1 $$
 	showing that no analytic extension exists, for $f$ blows up in every neighborhood of points on the boundary of $\partial \mathbb{D}$. 
 	<br>

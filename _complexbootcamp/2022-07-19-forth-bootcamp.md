@@ -75,7 +75,7 @@ Show that $f$ is injective on $\mathbb{D}$.
 <details>
 	<summary>Solution</summary>
 	Let $\gamma:[0,1] \to \partial \mathbb{D}$ be a parameterization of the unit circle. 
-	Since $f$ is injective we see that $f\circ \gamma$ is a simple closed curve, and by the Jordan curve theorem we see that $\mathbb{C}\setminus f\circ \gamma([0,1])$ has the two connected components $$ \begin{align*} U &= \{ z: n(f\circ \gamma,z) = 0 \} \\ V&= \{z:n(f\circ \gamma,z) = \pm 1\end{align*}\}$$
+	Since $f$ is injective we see that $f\circ \gamma$ is a simple closed curve, and by the Jordan curve theorem we see that $\mathbb{C}\setminus f\circ \gamma([0,1])$ has the two connected components $$ \begin{align*} U &= \{ z: n(f\circ \gamma,z) = 0 \} \\ V&= \{z:n(f\circ \gamma,z) = \pm 1\}\end{align*}$$
 	where the $\pm 1$ just depends on orientation. 
 	Using the argument principle we find that the number of solutions to $f(z) = w$ is $$ \frac{1}{2\pi i} \int_{\gamma} \frac{f'(z)}{f(z) - w}\,dz = \frac{1}{2\pi i} \int_{f\circ \gamma} \frac{1}{z-w}\,dz = n(f\circ \gamma,w) = 0\text{ or } \pm 1$$
 	hence $f(z) = w$ has at most one solution so $f$ must be injective.
@@ -87,13 +87,15 @@ Let $K$ be a compact connected subset of $\mathbb{C}$ containing $\pm i$.
 Show that there exists a holomorphic branch of $(z^2 + 1)^{-1/2}$ in $\mathbb{C} \setminus K$ and determine the possible values of its integral along closed curves in $\mathbb{C} \setminus K$. 
 <details>
 	<summary>Hint</summary>
-	Recall that a branch of $\log f$ exists for a function $f$ on a domain $U$ if and only if $\int_\gamma f'/f\,dz = 0$ for all closed curves $\gamma:S^1\to U$. 
-	If this this integral is nonzero, consider defining a multivalued primitive and composing with $e^z$, if the values differ by multiples of $2\pi i$ the composition is a single valued function. 
+	Recall that a branch of $\log f$ exists for a function $f$ on a domain $U$ if and only if $\int_\gamma f'/f\,dz = 0$ for all closed curves $\gamma$. 
+	If this this integral is nonzero, consider defining a multivalued primitive and composing with $e^z$, if the values differ by multiples of $2\pi i$ the composition is a single valued function. <br>
+
+	I suspect this problem was modified from 4.4.7.5 in Ahlfors which asks this same question for $(1-z^2)^{-1/2}$. It may be easier to attempt this problem first, take note of the residues encountered. 
 </details>
 <details>
 	<summary>Solution</summary>
 	Letting $f(z) = (z^2 + 1)^{-1/2}$ we can compute that $$ \frac{f'(z)}{f(z)} = -\frac{z}{z^2 + 1} $$
-	which has poles of order $2$ at $\pm i$. 
+	which has simple poles at $\pm i$. 
 	We then compute 
 	$$\text{res}_{z= i}\left( \frac{f'}{f}\right) = \lim_{z\to i} -(z-i) \frac{z}{(z^2 + 1)^2} = -\frac{i}{2i} = -\frac{1}{2} $$
 	and performing the same computation at $z = -i$ we find 
@@ -107,12 +109,12 @@ Show that there exists a holomorphic branch of $(z^2 + 1)^{-1/2}$ in $\mathbb{C}
 	for $k\in \mathbb{Z}$. 
 	In general, we know that a logarithm of a function $f$ exists when this integral is zero for all closed curves $\gamma$ so we are not fortunate enough to arrive at a branch fo $\log(f)$. 
 	However, since the integral over closed $\gamma$ is always a multiple of $2\pi i$ we see that it matches the period of $\text{exp}$. 
-	As a result, we can define a multivalued map $h:\mathbb{C} \setminus K \to \mathbb{C}$ by fixing some $z_0 \in \mathbb{C}\setminus K$ and letting $l = \log f(z_0)$ for any branch of $\log$ and $\sqrt{}$ with appropraite domains. Then
+	As a result, we can define a multivalued map $h:\mathbb{C} \setminus K \to \mathbb{C}$ by fixing some $z_0 \in \mathbb{C}\setminus K$ and letting $l = \log f(z_0)$ for any branch of $\log$ and $\sqrt{}$ with appropriate domains. Then
 	$$ h(\xi) = \left\{ l + \int_{\gamma} \frac{f'}{f}\,dz: \gamma: [0,1], \gamma(0) = z_0, \gamma(1) = \xi \right\}.$$
 	(Note that this is assuming that there is just one connected component in $\mathbb{C} \setminus K$. This is not necessarily true, but we can define $h$ on other components by fixing other $z_0$ in that component and working piecewise.)
 	From prior work we see the values of $h(\xi)$ all differ by multiples of $2\pi i$ hence $z \mapsto \exp(h(z))$ is a well defined function. 
 	We can also see that this function is holomorphic, for if we select any $z$ in the domain there exists a simply connected neighborhood $U$ of $z$ for which $$ \int_\gamma \frac{f'}{f}\,dz = 0$$ for all closed curves $\gamma:[0,1]\to U$. 
-	Hence we can locally define a holomorphic branch $l$ of $\log f$ on this domain and in $U$ $\text{exp}(h(z)) = \text{exp}(l(z))$ showing the left hand side is indeed holomorhpic at $z$. <br>
+	Hence we can locally define a holomorphic branch $l$ of $\log f$ on this domain and in $U$ $\text{exp}(h(z)) = \text{exp}(l(z))$ showing the left hand side is indeed holomorphic at $z$. <br>
 	Finally, we must show that $\text{exp}(h(z))$ is indeed a branch of $f$. 
 	Differentiating $\text{exp}(2h(z))/(f(z))^2$ we find 
 	$$ 
@@ -123,7 +125,7 @@ Show that there exists a holomorphic branch of $(z^2 + 1)^{-1/2}$ in $\mathbb{C}
 	$$
 	showing that the functions are multiples of one another. Finally, evaluating at $z_0$ we see $\text{exp}(h(z_0)) = \text{exp}(l) = f(z_0)$ hence they are identical. 
 
-	<br><i>Original solution to second part</i><br>
+	<br><!--<i>Original solution to second part</i><br> -->
 	To compute the integral of this branch over a closed curve first note that any such curve $\gamma$ can be replaced by a curve on a circle of radius $> R$ with the same integral (due to Cauchy's theorem.)
 	We can let $R$ be greater the largest modulus attained on $K$. 
 	Then note our branch restricted to $\mathbb{C} \setminus \overline{B_r(0)}$ can be continued analytically to $\mathbb{C}\setminus [-i,i]$. 
@@ -143,15 +145,17 @@ Show that there exists a holomorphic branch of $(z^2 + 1)^{-1/2}$ in $\mathbb{C}
 	$$ \int_{[-i,i]} \frac{1}{\sqrt{1+z^2}}\,dz = \int_{-1}^1 \frac{i}{\sqrt{1-t^2}}\,dt = \pm \pi i $$
 	hence the integral over any closed curve will be an integer multiple of $2\pi i$. 
 
-	<br><i>Toby's solution to second part</i><br>
+	<!--<br><i>Toby's solution to second part</i><br>
 	Observe that 
 	$$ \left( (1+z^2)^{-1/2} - \frac{1}{z} \right)\left( (1+z^2)^{-1/2} + \frac{1}{z} \right) = \frac{1}{1+z^2} - \frac{1}{z^2} = -\frac{1}{z^2 + z^4} $$
 	which, for $|z| > 1$, has absolute value below $1/|z|^4$. 
-	Using the triangle inequality we find 
-	$$ \left| \int_\gamma (1+z^2)^{-1/2} \,dz - \int_\gamma \frac{1}{z} \,dz \right| \leq \int_\gamma \left| \frac{1}{z^4} \right|\,dz  \leq \text{Length}(\gamma) \sup |\gamma(t)|^{-4}.$$
-	Finally, we note that we can homotope $\gamma$ into a sequence of circular loops with arbitrarily large radius $R$, so the right hand side becomes $\leq 2\pi R\cdot R^{-4} \to 0$ as $R\to \infty$, establishing
+	From this we conclude that one of the products is at most $1/|z|^2$$^\dagger$, this allows us to bound that term by
+	$$ \left| \int_\gamma (1+z^2)^{-1/2} \,dz - \int_\gamma \frac{1}{z} \,dz \right| \leq \int_\gamma \left| \frac{1}{z^2} \right|\,dz  \leq \text{Length}(\gamma) \sup |\gamma(t)|^{-2}.$$
+	Finally, we note that we can homotope $\gamma$ into a sequence of circular loops with arbitrarily large radius $R$, so the right hand side becomes $\leq 2\pi R\cdot R^{-2} \to 0$ as $R\to \infty$, establishing
 	$$ \int_\gamma (1+z^2)^{-1/2} \,dz = \int_\gamma \frac{1}{z} \,dz = 2\pi n$$
 	for some $n\in \mathbb{Z}$. 
+	<br>
+	$\dagger$ As of writing I'm unsure how to make this step rigorous. -->
 </details>
 
 Problem 5 (Prelim August 2020)
@@ -242,7 +246,7 @@ Prove that the range of the entire function $z\mapsto z^2 + \cos(z)$ is all of $
 	For the remaining cases we can use symmetric Rouche's theorem on the functions $f(z) = z^2 + \cos(z) - w$ and $g(z) = \cos(z) - w$ to show both have the same number of roots in $\mathbb{C}$, and since $\cos$ is surjective this will complete the proof. <br>
 	To do this, define the path $\Lambda = \partial \{x + i y: |x| < 2n\pi, |y| < n\}$. 
 	On horizontal segments we note that $$|cos(z) - w| \geq \left| \frac{e^{\pm n} + e^{\mp n}}{2} - w \right| \geq \frac{1}{2} e^n - |w| $$
-	while $|f(z) - g(z)| = |z^2| = 4\pi^2n^2 + n^2$, hence if we take $n$ suitably large we find $$|f(z) - g(z)| < |f(z)| + |g(z)|$$ on the horizontal sides of $\Lambda$. 
+	while $|f(z) - g(z)| = |z^2| \geq n^2$, hence if we take $n$ suitably large we find $$|f(z) - g(z)| < |f(z)| + |g(z)|$$ on the horizontal sides of $\Lambda$. 
 	On the vertical sides we note that $\cos(\pm 2\pi n + iy) = (e^y+e^{-y})/2 \geq 1 > w$, so $g(z) > 0$. 
 	The triangle inequality yields $|z^2| \leq |z^2 + \cos(z) - w| + |\cos(z) -w|$, and we know equality occurs if and only if both $f$ and $-g$ point in the same direction at $z$. 
 	Since $\cos(z) - w  > 0 $ we see that for equality to occur must require $z^2 \in \mathbb{R}$ which can only occur if $z\in \mathbb{R}$ or $i\mathbb{R}$. 
@@ -255,7 +259,7 @@ Prove that the range of the entire function $z\mapsto z^2 + \cos(z)$ is all of $
 
 Problem 9 (Prelim January 2011)
 ------
-Let $f$ be analytic in an anulus $ U = \\{z: r < |z| < R\\}$ where $0 < r < R$. 
+Let $f$ be analytic in an annulus $ U = \\{z: r < |z| < R\\}$ where $0 < r < R$. 
 Assume $f$ has no zeros in $U$. Show there exists an integer $n$ and a holomorphic function $g:U\to \mathbb{C}$ such that $f(z) = z^n e^{g(z)}$
 <details>
 	<summary>Hint</summary>
@@ -344,7 +348,7 @@ Evaluate the integrals  \[  I = \int_C \sqrt{1-z^2}\,dz \quad J = \int_{0}^\inft
 	$$ \text{res}_{z=1}(f) = \text{res}_{z= -1}(f) = \frac{1}{2} $$
 	hence by applying Cauchy's theorem and letting $R\to \infty, r\to 0$ we find 
 	$$\int_\mathbb{R} f(z)\,dz = \pi i $$
-	and finally, equating imaginary parts and dividing by 2 (due to evenness of the integrad) we arrive at
+	and finally, equating imaginary parts and dividing by 2 (due to evenness of the integrand) we arrive at
 	$$ J = \frac{\pi}{2} $$
 </details>
 
@@ -363,4 +367,64 @@ Suppose $f$ is an entire function with the property that $f(z)$ is real if and o
 	Note however, that the curve $f\circ \gamma_r$ can only intersect the real axis twice - at $\theta = 0,\pi$. 
 	For $\theta \in (0,\pi)$ we must have that $f\circ \theta$ is entirely in the upper or lower half plane, and upon hitting $\mathbb{R}$ again at $\theta = \pi$ the argument will have either changed to $\pm \pi$ (in the case that $f(r),f(-r)$ have different signs) or $0$ (if the signs are identical.) 
 	Repeating this argument between $(\pi, 2\pi)$ we arrive at $n(f\circ \gamma_r,0) = \pm 1$ or $0$, which contradicts the existence of a double root at the origin. 
+</details>
+
+
+
+Problem 13 (Riccardo's Quandary)
+------
+Consider the following statement: 
+Any function $f$ continuous on the annulus $A = \{z\in \mathbb{C}: 1/2 \leq |z| \leq 2\}$ such that $f_{\partial A}$ is injective and $f_{A^o}$ is holomorphic is also injective on the interior $A^o$. 
+
+<ol>
+<li>Find a counterexample to this statement. 
+<details>
+	<summary>Hint</summary>
+	Try to apply the proof of Problem 3 to this problem, now with a contour of two concentric circles connected by a path. Where does the proof fail in this case? 
+</details>
+
+</li>
+<li>Find an additional hypothesis such that this statement is true. Prove it.
+<details>
+	<summary>Hint</summary>
+	Attempt the simpler case of $f$ having a holomorphic extension in some neighborhood of $A$.
+	
+	To extend this to the case of $A$ just continuous as the boundary prove the *dog on a leash* lemma (if $\gamma,\gamma'$ are two paths in $\C$ such that for all $t$ we have $|\gamma(t) - \gamma'(t)| < |\gamma(t)| then $n(\gamma,0) = n(\gamma',0)$.) 
+</details>
+</li>
+</ol>
+
+<details>
+	<summary style='display: none'>Solution</summary>
+	To begin, we attempt to prove a slightly weaker statement and find where it breaks. 
+	<br>
+	In the case of $f$ extending holomorphically to a neighborhood of $A$ we fix any point $z \in f(A)^o$. Without loss of generality we suppose that $z \not\in [1/2,2].$ 
+	We select the contour $\Gamma = \gamma_1 \ast \gamma_2 \ast \gamma_3 \ast \gamma^{-1}_2$ where $\gamma_1$ parametrizes the circle of radius 2 counter clockwise, $\gamma_2$ is a segment connecting $2$ to $1/2$, and $\gamma_3$ is parametrizes the circle of radius 1/2 clockwise.<br>
+	<img src="{{ site.baseurl }}/assets/complex-ex-4/annulus_contour.png" class="center" alt="Annulus contour"><br>
+	By argument principle we see that the number of solutions $f(\xi) = z$ is exactly 
+	$$ \begin{align*}
+	\frac{1}{2\pi i} \int_\Gamma \frac{f'(\xi)}{f(\xi) - f(z)}\,d\xi &= 
+		\frac{1}{2\pi i} \left(\int_{f\circ \gamma_1} \frac{1}{\xi - f(z)}\,d\xi + \int_{f\circ \gamma_3} \frac{1}{\xi - f(z)}\,d\xi\right) \\
+		&= n(f\circ \gamma_1,f(z)) + n(f\circ \gamma_3,f(z)) = \pm 1\text{ or }0.
+		\end{align*}$$
+	We know that both of these winding numbers are 1, 0, or -1 due to the injectivity of $f$ along $\partial A$, but is it possible for both to be equal to $\pm 1$? 
+	The parameterizations of the circles $\gamma_1,\gamma_3$ are oriented in opposite directions so we shall seek an $f$ that reverses the orientation of one and keep the second the same. Such a function is $$ f(z) =  z + \frac{2}{z}, $$
+	because for small $z$ the function resembles $z^{-1}$ which reverses orientation of $\gamma_3$ while for large $z$ it resembles the identity preserving the orientation of $\gamma_1$. 
+	From here it is easy to verify $f$ is injective on $\partial A$ and that $f(1) = f(2) = 3$ giving our counterexample for part (a). 
+	<br>
+	This exploration suggests that requiring $f$ to either preserve or reverse orientation for the two circles comprising $\partial A$. For our purposes, we will define this as $n(\gamma_1, z) \ne n(\gamma_3,z)$ for all $z \in \mathbb{C}$. 
+	Returning to the attempt at a proof our new assumption guarantees 
+	$n(f\circ \gamma_1,f(z)), n(f\circ \gamma_3,f(z))$ cannot both be $1$ or $-1$, hence $n(f\circ \Gamma,z) = \pm 1\text{ or }0$ giving injectivity by the argument principle. 
+	<br>
+	At this point what remains is to extend this result to $f$ analytic in $A^o$ and continuous on $A$. 
+	To do this, define $$A_\delta =  \{z\in \mathbb{C}: 1/2 + \delta \leq |z| \leq 2 - \delta\}$$ with corresponding contour $\Gamma^\delta$. 
+	Due to $A$ being compact $f$ is uniformly continuous on $A$.
+	Given $z\in f(A)^o$ let $\epsilon = d(z, \partial f(A)).$
+	By uniform continuity there exists $\hat\delta > 0$ such that if $|x-y| < \hat\delta \implies |f(x)-f(y)| < \epsilon$ for all $x,y \in A$. 
+	Therefore for any $0 < \delta < \hat\delta$ we have
+	$$ |f\circ \Gamma(t) - f\circ \Gamma^\delta(t)| < \epsilon \leq |f\circ \Gamma(t) - z|.$$
+	This shows that $\Gamma,\Gamma^\delta$ satisfy the hypothesis of the dog on a leash lemma, hence 
+	$$ n(f\circ \Gamma^\delta, z) = n(f\circ \Gamma, z) = \pm 1\text{ or } 0$$
+	for all sufficiently small $\delta$, and now we are able to apply the argument principle on $\Gamma^\delta$ proving injectivity. 
+	
 </details>

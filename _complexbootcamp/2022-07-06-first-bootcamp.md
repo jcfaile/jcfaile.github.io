@@ -48,8 +48,8 @@ What is the general form of a rational function $R$ satisfying $|R(z)| = 1 $ for
 	$$ R(z) = \overline{R\left(\frac{1}{\overline{z}}\right)}^{-1} $$ for all $z$ that are not poles of $R(z)$. 
 	From here, we see that $R$ has a root at some $z\in\mathbb{C}$ with order $m$ if and only if $R$ has a pole at $\overline{z}^{-1}$ of order $m$. 
 	This completely describes all roots and poles of $R$, so we are encouraged to define a rational function
-	$$ S(z) = \prod_{i = 1}^n \left(\frac{z-z_i}{1-\overline{z_i}z}\right)^{m_i} $$
-	where the $\{z_i\}_{i=1}^n$ are the distinct roots of $R$ with order $\{m_i\}_{i=1}^n$. 
+	$$ S(z) = z^m\prod_{i = 1}^n \left(\frac{z-z_i}{1-\overline{z_i}z}\right)^{m_i} $$
+	where the $\{z_i\}_{i=1}^n$ are the distinct nonzero roots of $R$ with order $\{m_i\}_{i=1}^n$ and $m$ is the order of the root at $z = 0$. 
 	Computing $R(z)/S(z)$ we see that since $R(z)$ and $S(z)$ have the same roots/poles with the same orders their quotient must not have any roots or poles. 
 	The only rational functions with this property are nonzero constants, so let $R(z)/S(z) = \alpha \in \mathbb{C}\setminus \{0\}$. 
 	Finally, since $|R(z)| = |S(z)| = 1$ when $|z| = 1$ we must have $|\alpha| = 1$ hence the general form is 
@@ -84,10 +84,10 @@ Write \[ \frac{2z+3}{z+1} \] as a power series in terms of $z-1$. Find the radiu
 <details>
 	<summary>Solution</summary>
 	$$ \begin{align*} 
-		\frac{2z+3}{z+1} &= \frac{2z+2}{z+1} + \frac{-1}{z+1} \\
-		&= 2 - \frac{1}{2-(1-z)} \\
-		&= 1 - \frac{1}{2} \frac{1}{1 - \frac{1-z}{2}} \\
-		&= 1 - \frac{1}{2} \sum_{n=0}^\infty \left( - \frac{1}{2}\right)^n (z-1)^n
+		\frac{2z+3}{z+1} &= \frac{2z+2}{z+1} + \frac{1}{z+1} \\
+		&= 2 + \frac{1}{2-(1-z)} \\
+		&= 1 + \frac{1}{2} \frac{1}{1 - \frac{1-z}{2}} \\
+		&= 1 + \frac{1}{2} \sum_{n=0}^\infty \left( - \frac{1}{2}\right)^n (z-1)^n
 	\end{align*} $$
 	for $n > 0 $ we see $|a_n| = 1/2^{n+1}$, so 
 	$$ 1/R = \limsup_{n\to\infty} \sqrt[n]{1/2^{n+1}} = 1/2 $$ giving a radius of convergence of 2. 
@@ -114,7 +114,7 @@ Suppose $f$ is a holomorphic function satisfying $|f(z)^2 - 1| < 1$ for all $z \
 </details>
 <details>
 	<summary>Solution</summary>
-	Following the hint, define two branches of $\sqrt{z}$ as maps $s_1,s_2:\mathbb{C} \setminus \{a\in \mathbb{R}: a < 0\} \to \mathbb{C}$ by choosing one to be the principle branch of square root ($s_1$) and the other its negative ($s_2$). 
+	Following the hint, define two branches of $\sqrt{z}$ as maps $s_1,s_2:\mathbb{C} \setminus \{a\in \mathbb{R}: a \leq 0\} \to \mathbb{C}$ by choosing one to be the principle branch of square root ($s_1$) and the other its negative ($s_2$). 
 	$s_1$ has image the half plane with $\text{Re}(z) > 0$ while $s_2$ has image the opposite half plane $\text{Re}(z)<0$. 
 	Now, if $|w^2 - 1| < 1$ we see that $w^2 \in B_1(1)$. 
 	This ball is contained in the domains of both $s_1,s_2$ and applying them to this set we find $s_1(B_1(1))$ is in the half plane $\text{Re}(z) > 0$ while $s_2(B_1(1))$ is in the half plane $\text{Re}(z) < 0$ and since the ball is connected we see its square roots are as well. 

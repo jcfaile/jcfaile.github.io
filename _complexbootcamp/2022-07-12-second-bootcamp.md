@@ -49,7 +49,6 @@ Problem 4
 Show that all conformal self maps of $\mathbb{D} = \\{z: |z| < 1\\}$ are of the form $$ z\mapsto \alpha \frac{z - z_0}{1-\overline{z_0} z} $$ for a $z_0 \in \mathbb{D}$ and $|\alpha| = 1$. 
 <details>
 	<summary>Hint</summary>
-	Note that any map $\mathbb{D} \to \mathbb{D}$ that has no zeros must be constant. 
 	If $T$ is our self map and $T(a) = 0$ make another map $S$ of the form above with $z_0 = a$. Then $T\circ S^{-1}$ is a self map which fixes zero. 
 </details>
 <details>
@@ -150,7 +149,7 @@ Let $f:D\to \mathbb{C}$ be a holomorphic function satisfying $\text{Re}(f(z)) > 
 </details>
 <details>
 	<summary>Solution</summary>
-	The Möbius transformation $$ S(z) = \frac{z - 1}{z + 1}$$ maps between the right half plane onto $\mathbb{D}$. 
+	The Möbius transformation $$ S(z) = \frac{z - 1}{z + 1}$$ maps the right half plane onto $\mathbb{D}$. 
 	We see that $S\circ f$ is now a holomorphic map from $D$ into $\mathbb{D}$. 
 	The inverse of this transformation is 
 	$$ S^{-1}(z) = \frac{z+1}{1-z}$$

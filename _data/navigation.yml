@@ -12,12 +12,15 @@ main:
   #- title: "Portfolio"
   #  url: /portfolio/
         
-  - title: "Blog Posts"
-    url: /posts/
+  #- title: "Blog Posts"
+  #  url: /posts/
 
   - title: "Complex Prelim Resources"
     url: /complex-prelim-bootcamp/
     
+  - title: "Junior Analysis"
+    url: /junior-analysis-2024/
+
   #- title: "CV"
   #  url: /cv/
     

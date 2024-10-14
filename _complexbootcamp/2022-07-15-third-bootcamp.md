@@ -39,8 +39,12 @@ Problem 2 (Prelim August 2020)
 Is there an entire function $f$ such that $|f(z)| \geq e^{|z|}$ for all $|z| > R >0$? Either provide an example or prove none exists. 
 <details>
 	<summary>Solution</summary>
-	Since $|f(z)| \geq 1$ it follows $z\mapsto f(z)^{-1}$ is entire and $|f(z)^{-1}| \leq e^{-|z|} \leq 1$. 
-	Hence by Liouville's theorem $z\mapsto f(z)^{-1}$ is constant and likewise so is $f$. 
+	Instinctively you may want to say "$|1/f(z)| \leq e^{-|z|} \leq 1$" and conclude $f$ is constant by Liouville, but this won't work since we only know our bound for $|z|$ large. 
+	Instead define $g(z) = 1/(f(1/z))$. Then we find 
+	$$ |g^{(n)}(0)| \leq \frac{n!}{2\pi} \int_0^{2\pi} \left| \frac{g(re^{i\theta})}{(re^{i\theta})^n} \right|\,d\theta \leq C \frac{e^{-1/r}}{r^n} \to 0 $$
+	as $r\to 0$. 
+	Having all derivatives zero is equivalent to $g$ being identically zero, which is impossible. 
+	Hence no such $f$ exists. 
 </details>
 
 Problem 3 (Prelim August 2009)
@@ -60,9 +64,12 @@ Show that $a_1/a_2 \in \mathbb{Q}$.
 	Hence by Liouville's theorem $f$ is constant. <br>
 
 	Now suppose that $\lambda = a_1/a_2  \in \mathbb{R} \setminus \mathbb{Q}$. 
-	Then for some choice of $m \in \mathbb{Z}$ we have $|\lambda + m| < 1$ (we can take for instance $m = - \lfloor \lambda \rfloor.$)
-	Then the sequence $ \{a_2(\lambda+m)^k\}_{k=0}^\infty$ is a sequence along the line $\text{span}(a_1,a_2)$ converging to $0$ and, in particular, we can expand each term as an integer combination of the periods $a_1,a_2$ hence evaluating $f$ is constant on this set. 
-	Now we can conclude by the identity theorem that $f$ must be constant. <br> Hence a non-constant function must have $a_1/a_2\in \mathbb{Q}$. 
+	If we let $A = \{ n \lambda + m|m,n\in \mathbb{Z}\}$ we note that $A$ cannot have any accumulation points, for this would allow us to apply the identity theorem to $f$ on a convergent sequence of periods. 
+	Hence there exists $r = \text{min} A \cap \{x > 0\}$ which is attained by some $r = n\lambda + m$. 
+	We claim $A =r\mathbb{Z}$. 
+	Indeed, if $q \in A \setminus r\mathbb{Z}$ (and WLOG $q > 0$) then there exists an integer $k$ such that $kr < q < (k+1)r$, which is equivalent to $0 < q - kr < r$. 
+	But note that $q -kr \in A$ since $A$ is an ideal, which contradicts that $r$ was the minimal positive element of $A$. 
+	Now since $1 \in A$ we can write $kr = 1$ for some $k \in \mathbb{Z}$ hence $r \in \mathbb{Q}$ and $a_1/a_1 = (r-m)/n \in \mathbb{Q}$. 
 </details>
 
 Problem 4 (Prelim January 2008)
@@ -98,7 +105,7 @@ Prove that all conformal self maps of $\mathbb{C}$ are affine transformations.
 	First note that if such a map is a polynomial, it must be of degree $1$ for a degree $n$ polynomial gives an $n$ to $1$ map (counting repeated roots.)
 	Now, if a conformal self map of $\mathbb{C}$ is not a polynomial the contrapositive of 4 tells us the limiit $$\lim_{z\to \infty} f(z)$$ does not exist (or in other words, the singularity at $\infty$ is essential.)
 	As a result, $f(\{z: |z| > 2\})$ must be dense subset of $\mathbb{C}$ as it contains a neighborhood of $\infty$. 
-	However, by the open mapping theorem $f(\{z: |z| < 1\})$ is an open subset of $\mathbb{C}$ and hence has a nontrivial intersection with $f(\{z:|z| > 2\})$. 
+	However, by the open mapping theorem $f(\{z: |z| < 1\})$ is an open subset of $\mathbb{C}$ and hence has a nontrivial intersection with $f(\{z:|z| > 1\})$. 
 	Since the preimage sets are disjoint this clearly violates injectivity, ruling out the possibility for a non-polynomial self map. 
 </details>
 
@@ -197,7 +204,7 @@ Prove that for arbitrary $y \in \mathbb{R}$ we have
 $$ \lim_{x\to \infty} f(x+iy) = L. $$
 <details>
 	<summary>Hint</summary>
-	The real and imaginary parts of $f$ are maps $\mathbb{R}ö^2 \to \mathbb{R}$ so you may consider applying the mean value theorem on these parts. Then you can control the real/imaginary parts of $|f(x+iy) - f(x+iy_0)|$ with $|f'(x + i\xi)|, y < \xi < y_0$. 
+	The real and imaginary parts of $f$ are maps $\mathbb{R}^2 \to \mathbb{R}$ so you may consider applying the mean value theorem on these parts. Then you can control the real/imaginary parts of $|f(x+iy) - f(x+iy_0)|$ with $|f'(x + i\xi)|, y < \xi < y_0$. 
 </details> 
 <details>
 	<summary>Solution</summary>
@@ -239,5 +246,7 @@ Suppose $f$ is meromorphic on $\mathbb{D}\setminus\\{0\\}$ having poles at $z = 
 	<summary>Solution</summary>
 	Following the hint, for $r$ suitably small we select $w\notin \overline{f(B_r(0)\setminus \{0\})}$ giving the existence of an $s > 0$ such that $|w - z| > s$ for all $z \in \overline{f(B_r(0)\setminus\{0\})}$. 
 	It then follows that $|g(z)| = |f(z) - w|^{-1} < s^{-1}$. 
-	In particular, the poles of $f$ at $z = 0, 1/2, 1/3,\dots$ become removable singularities of $g$ with value $0$ and by the identity theorem it follows that $g$ is the zero function, a contradiction. 
+	In particular, the poles of $f$ at $z = 0, 1/2, 1/3,\dots$ become removable singularities of $g$ with value $0$.
+	If the singularity at zero is also removable since $g$ is bounded. 
+	With this we can apply the identity theorem and it follows that $g$ is the zero function, a contradiction. 
 </details>

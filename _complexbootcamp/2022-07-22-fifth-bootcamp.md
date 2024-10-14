@@ -36,7 +36,7 @@ Show that $H$ is a closed subset.
 	which gives us $\sup_{z\in K} |f(z)| \leq C_k \lVert f \rVert_{L^2(\mathbb{D})}$. 
 	<it>Note that this is weaker than the statement in the hint, since we are taking the $L^2$ norm over all of the disk rather than just on $K$. Nonetheless, this suffices to show closure of $H$. </it>
 	<br>
-	Now that we have this bound, take a sequence of functions $\{f_n\}_{n=1}^\infty \subset H$ convering in $L^2$ to $f$. 
+	Now that we have this bound, take a sequence of functions $\{f_n\}_{n=1}^\infty \subset H$ converging in $L^2$ to $f$. 
 	Note that from the bound this sequence is Cauchy sequence with respect to the uniform norm, hence they converge uniformly to a continuous function. 
 	By uniqueness of limits in $L^2$, it follows that this continuous limit is equal to $f$ almost everywhere so we can take it to be our representative of $f$. 
 	Now, we see $\sup_{z\in K}|f_n(z)-f(z)| \to 0$ on all compact sets, so by Weierstrass' theorem we see that $f$ is holomorphic.
@@ -53,10 +53,10 @@ Let $0 < \alpha < 1$. Show that \[ \prod_{n=1}^\infty \cos(\alpha^n z)\] defines
 	<summary>Solution</summary>
 	To see that this product defines an entire function we will show that it converges uniformly on compact sets. 
 	Given a compact set $K\subset \mathbb{C}$ we note that it is bounded in modulus by some $M > 0$. 
-	Additionally, uniform convergence of the product is the same as uniform convergence of the logarithm of absolute values, so now we consider 
+	Additionally, uniform convergence of the product on a compact set is the same as uniform convergence of the logarithm of the values (at least for $n$ large enough depending on the compact set.) So now we consider 
 	$$ \begin{align*}
-		\sum_{n=1}^\infty \log|\cos(\alpha^n z)| &= \sum_{n=1}^\infty \log(1 - (1 - |\cos(\alpha^n z)|) ) \\
-		&\leq \sum_{n=1}^\infty 1 - |\cos(\alpha^n z)|
+		\sum_{n=1}^\infty \log(\cos(\alpha^n z)) &= \sum_{n=1}^\infty \log(1 - (1 - (\cos(\alpha^n z))) ) \\
+		&\leq \sum_{n=1}^\infty 1 - \cos(\alpha^n z)
 	\end{align*} $$
 	Note that if we expand the $\cos(\alpha^n z)$ terms as Taylor expansion each summand is then $ \alpha^{2n}|z|^2/2 + O(\alpha^{3n} |z|^4)$ showing that this sum can be termwise bounded by $$ C\sum_{n=1}^\infty |\alpha^{n} z |^2 = M^2 \sum_{n=1}^\infty \alpha^n $$ for $n$ sufficiently large.
 	Since $0 < \alpha < 1$ we see that this sum converges, so by the $M$-test the original product converges uniformly on the compact set $K$. 
@@ -78,7 +78,7 @@ Problem 3 (Prelim August 2021)
 ------
 Let $f$ be a meromorphic function on $\mathbb{C}$ satisfying $f(z)f(-z) = 1$ for all $z\in \mathbb{C}$. 
 Show that there exists an entire function $g$ such that $f(z) = g(z)/g(-z)$ for all $z\in \mathbb{C}$. 
-(For simplicity you may assume that $f(0) = 1$.)
+(For simplicity you may assume that $f(0) = 1$.) <br> <it> Remark: this assumption is actually necessary, for $f$ to be of this form $f(0) = 1$.</it>
 <details>
 	<summary>Hint</summary>
 	Note that we do not necessarily have that $f$ is rational (for instance, we could have $f(z) = e^z$.) 
@@ -101,12 +101,11 @@ Show that there exists an entire function $g$ such that $f(z) = g(z)/g(-z)$ for 
 	from here we can define 
 	$$g(z) = e^{[g_1(z) - g_2(z)]/2} \prod_{i=1}^N \left(1-\frac{z}{z_i} \right) e^{p_i(z/z_i)}$$
 	and we see that 
-	$$ \begin{align*} \frac{g(z)}{g(-z)} &=  e^{[g_1(z) - g_2(z)]/2 - [g_1(-z) - g_2(-z)]/2} \prod_{i=1}^N \left(1-\frac{z}{z_i} \right)\left(1 + \frac{z}{z_i} e^{p_i(z/z_i) + p_i(-z/z_i)}\right) \\
-	&= e^{[g_1(z) - g_2(z)]/2 + [g_1(z) - g_2(z)]/2 + \pi i n} \prod_{i=1}^N \left(1-\frac{z}{z_i} \right)\left(1 + \frac{z}{z_i} e^{p_i(z/z_i) + p_i(-z/z_i)}\right) \\
+	$$ \begin{align*} \frac{g(z)}{g(-z)} &=  e^{[g_1(z) - g_2(z)]/2 - [g_1(-z) - g_2(-z)]/2} \prod_{i=1}^N \left(1-\frac{z}{z_i} \right)\left(1 + \frac{z}{z_i} \right)^{-1}e^{p_i(z/z_i) - p_i(-z/z_i)} \\
+	&= e^{[g_1(z) - g_2(z)]/2 + [g_1(z) - g_2(z)]/2 + \pi i n} \prod_{i=1}^N \left(1-\frac{z}{z_i} \right)\left(1 + \frac{z}{z_i} \right)^{-1}e^{p_i(z/z_i) - p_i(-z/z_i)} \\
 	&= \pm f(z)
 	\end{align*} $$
 	Finally, we note that since $f(0) = 1$ that $g_1(0) - g_2(0) = 2\pi i k$ for some $k \in \mathbb{Z}$, and it follows immediately that $n = 2k$, and hence $g(z)/g(-z) = +f(z)$ as desired. 
-
 </details>
 
 
@@ -175,7 +174,7 @@ Prove that \[ \frac{\pi^2}{\sin^2(\pi z)} = \sum_{n=-\infty}^\infty \frac{1}{(z-
 	The M-test establishes uniform convergence on $K$ and now
 	Mittag-Leffler guarantees the existence of an entire function $g$ such that 
 	$$ \frac{\pi^2}{\sin^2(\pi z)} = g(z) + \sum_{n=-\infty}^\infty \frac{1}{(z-n)^2}.$$
-	Note that both the left hand side and the sum of singular parts is $1$-periodic, hence so is $g$. 
+	Note that both the left hand side and the sum of singular parts are $1$-periodic, hence so is $g$. 
 	Taking the limit as $\text{Im }z \to \infty$ we see $\sin^2(\pi z), \sum (z-n)^{-2} \to 0$.
 	This establishes that that we can bound $g$ on the sytip $0 \leq \text{Re}(z) \leq 1$ which then by periodicity establishes a bound on all of $\mathbb{C}$. 
 	This then forces $g$ to be constant by Liouville's theorem, and since the limits as $z\to \infty$ are both zero we see that $g \equiv 0$. 
@@ -205,12 +204,12 @@ Determine the partial fraction expansion for \[ \frac{1}{\sqrt{z} \sin \sqrt{z}}
 	(the choice of real and imaginary bounds will become clear once we bound the integral.) <br>
 	<img src="{{ site.baseurl }}/assets/complex-ex-5/rect_contour.png" class="center" alt="Square contour"><br>
 	Then by the residue theorem
-	$$ \int_{R_n}\frac{1}{\xi - z} \frac{1}{\xi \sin (\xi )} \,d\xi - 2\pi i \frac{1}{z\sin(z)} = 2\pi i\sum_{n = -N^2}^{N^2} \text{Res}_{z = \pi n}(f) $$
-	where $f$ is the integrand. 
+	$$ \int_{R_n}\frac{1}{\xi - z} \frac{1}{\xi \sin (\xi )} \,d\xi - 2\pi i \frac{1}{z\sin(z)} = 2\pi i\sum_{n = -N^2}^{N^2} \text{Res}_{\xi = \pi n}(f) $$
+	where $f(\xi)$ is the integrand on the left. 
 	For $n \ne 0$ we see 
-	$$ \text{Res}_{z = 2\pi n}(f) = \lim_{\xi \to \pi n} \frac{\xi - \pi n}{\xi - z} \frac{1}{\xi \sin(\xi)} = \frac{(-1)^n}{(\pi n-z) \pi n} $$
+	$$ \text{Res}_{\xi = 2\pi n}(f) = \lim_{\xi \to \pi n} \frac{\xi - \pi n}{\xi - z} \frac{1}{\xi \sin(\xi)} = \frac{(-1)^n}{(\pi n-z) \pi n} $$
 	and when $n = 0$
-	$$ \text{Res}_{z = 0}(f) = \lim_{\xi \to \pi n} \frac{d}{d \xi} \frac{\xi^2}{\xi - z} \frac{1}{\xi \sin(\xi)} = \frac{1}{z^2}.$$
+	$$ \text{Res}_{\xi = 0}(f) = \lim_{\xi \to \pi n} \frac{d}{d \xi} \frac{\xi^2}{\xi - z} \frac{1}{\xi \sin(\xi)} = -\frac{1}{z^2}.$$
 	Finally, if we can show the integral term converges to zero as $N \to \infty$ we will have a partial fractions decomposition of our function. 
 	Dividing $R_n$ into $\Gamma_1,\Gamma_2, \Gamma_3,\Gamma_4$ (as it is in the picture) we can apply the ML-lemma twice. 
 	Indeed, over either $\Gamma_1 + \Gamma_3$
@@ -224,7 +223,7 @@ Determine the partial fraction expansion for \[ \frac{1}{\sqrt{z} \sin \sqrt{z}}
 	$$ \left|\int_{\Gamma_2} f(\xi)\,d\xi\right| \leq L(\Gamma_2) \sup_{z \in \Gamma_2} |f(z)| \leq 2N \frac{1}{\pi N^2} \to 0$$
 	as $N\to \infty$. 
 	As a result, taking the limit as $N\to \infty$ of residue theorem expression yields
-	$$ \frac{1}{z\sin(z)} = \frac{1}{z^2} + \lim_{N\to \infty}\sum_{n=-N}^N \frac{(-1)^n}{(z-\pi n)\pi n} = \frac{1}{z^2} + \lim_{N\to \infty}\sum_{n=-N}^N (-1)^n\frac{2}{z^2-(\pi n)^2} $$
+	$$ \frac{1}{z\sin(z)} = \frac{1}{z^2} + \lim_{N\to \infty}\sum_{n=-N}^N \frac{(-1)^{n+1}}{(z-\pi n)\pi n} = \frac{1}{z^2} + \lim_{N\to \infty}\sum_{n=-N}^N (-1)^{n+1}\frac{2}{z^2-(\pi n)^2} $$
 	and since all powers of $z$ are even we can substitute in the square root, simply halving these powers. 
 </details>
 
@@ -257,7 +256,7 @@ for all $z\in \mathbb{C}\setminus \mathbb{Z}$, with the sum on the right hand si
 	This establishes the equality 
 	$$ \frac{d}{dz} \left( \frac{\pi \sin(z)}{\sin(\pi z)} \right) = \sum_{n=-\infty}^\infty \frac{(-1)^{n+1} \sin(n)}{(z-n)^2} $$
 	pointwise. 
-	If $K$ is any compact set avoiding the poles of our function then for all $z\in K$ we have $|z| < M$. 
+	For any compact $K \subset\mathbb{C}\setminus \mathbb{Z} \cup \{0\}$ we have a uniform bound $|z| < M$ for all $z\in K$. 
 	We can then see that for indices $n > M$ we have
 	$$ \left| \frac{(-1)^{n+1} \sin(n)}{(z-n)^2} \right| \leq \frac{1}{(M - n)^2} $$
 	and for $n < -M$ we find 
@@ -310,7 +309,7 @@ Assume $f$ is entire and of finite order. Prove that if $|f(z)| \leq 1$ for all 
 	Since we can pick any $L' \geq L$ this bound holds on the entire set $S$.
 	<br>
 	Finally, given a compact set $K \subset S$ we will find $|z| \leq M$ for some $M > 0$. 
-	Now by the triangle inequality, $$\sup_{z\in K} |f(z)e^{-\epsilon z^{n+1}} - f(z)| \leq \sup_{z\in K} |f(z)| (e^{\epsilon M^{n+1}} -1) \to 0$$ as $\epsilon \to 0$. 
+	Now, $$\sup_{z\in K} |f(z)e^{-\epsilon z^{n+1}} - f(z)| \leq \sup_{z\in K} |f(z)|(e^{\epsilon M^{n+1}} -1) \to 0$$ as $\epsilon \to 0$. 
 	Since we converge uniformly on compact sets and every function $f(z)e^{-\epsilon z^{n+1}}$ is uniformly bounded by $1$ it follows that $f$ has this bound as well. 
 </details>
 
@@ -330,6 +329,7 @@ Let $D_2 \subset D_1$ be two disks in $\mathbb{C}$ with $D_1$ open and $D_2$ clo
 	The functions $f_i$ are holomorphic by the general theory set out in Ahlfors 4.2.
 	Outlining for $f_1$, we can show $f_1$ is continuous and then directly compute the derivative via difference quotient
 	$$ \begin{align*} f_1'(z) &= \lim_{z'\to z} \frac{f_1(z) - f_1(z')}{z-z'} \\
-		&= \lim_{z'\to z} \frac{1}{z-z'}\int_{C_1} \frac{(z-z')f(\xi)}{(\xi-z)(\xi-z')} = \int_{C_1} \frac{f(\xi)}{(\xi-z)^2}\,d\xi \end{align*}$$
+		&= \lim_{z'\to z} \frac{1}{z-z'}\int_{C_1} \frac{(z-z')f(\xi)}{(\xi-z)(\xi-z')} = \int_{C_1} \frac{f(\xi)}{(\xi-z)^2}\,d\xi. \end{align*}$$
+	Another simple proof can be accomplished by showing the integral of $f_i$ over any closed curve in the appropriate domain is zero then applying Morera's theorem. <br>
 	As a final note, while the sets $C_i$ do not enclose the entire regions $D_i$ we can select $C_i$ closer and closer to $\partial D_i$ and extend the $f_i$ by analytic continuation. 
 </details>
