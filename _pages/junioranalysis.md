@@ -44,23 +44,28 @@ Flavio - Interacting Diffusions (October 7th)
 Esteban - Weyl’s Law in Quantum Mechanics (October 14th)
 ------
 <hr>
-I will give an introductory talk to Weyl's law, regarding the asymptotic distribution of eigenvalues of certain self-adjoint operators. We will mostly talk about its application to study the semi-classical limit of Schrödinger operators. At the end we will also touch upon the connection with Thomas-Fermi theory in many-particle fermonic systems.
+<details><summary>Abstract</summary>I will give an introductory talk to Weyl's law, regarding the asymptotic distribution of eigenvalues of certain self-adjoint operators. We will mostly talk about its application to study the semi-classical limit of Schrödinger operators. At the end we will also touch upon the connection with Thomas-Fermi theory in many-particle fermonic systems.</details>
 
-Jeffrey - TBD (October 21st)
+Jeffrey - $L^2$-Stability and Uniqueness for Scalar Conservation Laws with Concave-Convex Fluxes (October 21st)
+------
+<hr>
+<details><summary>Abstract</summary>We study stability properties of solutions to $1-d$ scalar conservation laws with a class of non-convex fluxes. Using the theory of a-contraction with shifts, we show $L^2$-stability for shocks among a class of large perturbations, and give estimates on the weight coefficient a in regimes where the shock amplitude is both large and small. Then, we use these estimates as a building block to show a uniqueness theorem under reduced entropy conditions for weak solutions to the conservation law via a modified front tracking algorithm. The proof is inspired by an analogous program carried out in the $2 \times 2$ system setting by Chen, Golding, Krupa, and Vasseur.
+
+*Note* Jeffrey actually did not present this and instead discussed the regularizing effect of the nonlinearity for scalar conservation laws. </details>
+
+Martha Hartt - An ergodic continued fraction algorithm on $\mathbb{R}^{1,1}$ (October 28th)
+------
+<hr>
+<details><summary>Abstract</summary>In this talk, we will explore continued fraction algorithms as dynamical systems. We will discuss a proof of why regular continued fractions are ergodic and how this proof can be extended to a certain continued fraction algorithm on 2D Minkowski space. Time permitting, we will also discuss the extended even continued fractions and their higher dimensional analog. </details>
+
+No Talk (November 4th)
 ------
 <hr>
 
-Martha Hartt - TBD (October 28th)
+Jake - Sets of Finite Perimeter (November 11th)
 ------
 <hr>
-
-*Unclaimed* - TBD (November 4th)
-------
-<hr>
-
-Jake - TBD (November 11th)
-------
-<hr>
+Sets of finite perimeter are useful in solving certain geometric variational problems. We will develop the theory of sets of finite perimeter up to the first and second variation of perimeter and time permitting use that to solve some of these problems.
 
 *Unclaimed* - TBD (November 18th)
 ------
