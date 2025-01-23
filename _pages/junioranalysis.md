@@ -6,7 +6,67 @@ title: "Junior Analysis Seminar"
 
 
 Welcome to Junior Analysis. If you would like to give a talk this academic year (Fall 2024 - Spring 2025) please contact me. 
-We will meet in **PMA 11.176** from **2-3 pm Monday**. Weekly reminders are sent via the Junior Analysis email list. You can subscribe <a href="https://utlists.utexas.edu/sympa/subscribe/junior-analysis">here.</a>
+We will meet in **PMA 10.176** from **3-4 pm Friday**. Weekly reminders are sent via the Junior Analysis email list. You can subscribe <a href="https://utlists.utexas.edu/sympa/subscribe/junior-analysis">here.</a>
+
+Spring Schedule
+======
+
+
+Zach - Global well-posedness and scattering for defocusing algebraic NLS in one dimension via new smoothing and almost Morawetz estimates. (January 24th)
+------
+<hr>
+In this talk, we present some new results on the long time existence and scattering behavior of rough solutions to nonlinear Schrödinger equations in one dimensions with algebraic nonlinearities, 
+\[i \partial_t u + \Delta u = |u|^{2k}u,\quad k\in \mathbb{N},\ k \geq 3,\]
+with initial data in a Sobolev space $H^s(\mathbb{R})$ with index $0 < s < 1$ lying below the energy exponent. We improve on previous results of Colliander, Holmer, Visan and Zhang by proving new smoothing estimates on the nonlinear part of the solution and new almost-Morawetz estimates. Our main tool is the I-method of Colliander, Keel, Staffilani, Takaoka and Tao. We take advantage of the gained regularity using a linear-nonlinear decomposition that is better able to estimate the energy increment of a modified solution on long time intervals; on short intervals, we use a spacetime $L^2_{t,x}$ bilinear estimate to capture cancellations in the energy increment between low and high frequency factors that appear from doing a Littlewood-Paley frequency decomposition. This is joint work with Xueying Yu (Oregon State University).
+
+TBD (January 31st)
+------
+<hr>
+
+Erisa (February 7th)
+------
+<hr>
+
+Unai (February 14th)
+------
+<hr>
+
+Cooper (February 21st)
+------
+<hr>
+
+Jeffrey (February 28th)
+------
+<hr>
+
+Luisa (March 7th)
+------
+<hr>
+
+Justin (March 14th)
+------
+<hr>
+
+Jake (March 28th)
+------
+<hr>
+
+Ken (April 4th)
+------
+<hr>
+
+Esteban (April 11th)
+------
+<hr>
+
+Mark (April 18th)
+------
+<hr>
+
+TBD (April 25th)
+------
+<hr>
+
 
 Fall Schedule
 ======
@@ -58,23 +118,19 @@ Martha Hartt - An ergodic continued fraction algorithm on $\mathbb{R}^{1,1}$ (Oc
 <hr>
 <details><summary>Abstract</summary>In this talk, we will explore continued fraction algorithms as dynamical systems. We will discuss a proof of why regular continued fractions are ergodic and how this proof can be extended to a certain continued fraction algorithm on 2D Minkowski space. Time permitting, we will also discuss the extended even continued fractions and their higher dimensional analog. </details>
 
-No Talk (November 4th)
-------
-<hr>
 
 Jake - Sets of Finite Perimeter (November 11th)
 ------
 <hr>
-Sets of finite perimeter are useful in solving certain geometric variational problems. We will develop the theory of sets of finite perimeter up to the first and second variation of perimeter and time permitting use that to solve some of these problems.
+<details><summary>Abstract</summary>Sets of finite perimeter are useful in solving certain geometric variational problems. We will develop the theory of sets of finite perimeter up to the first and second variation of perimeter and time permitting use that to solve some of these problems.</details>
 
-*Unclaimed* - TBD (November 18th)
+Unai - Interactions between Optimal Transport Theory and Partial Differential Equations (November 18th)
 ------
 <hr>
+<details><summary>Abstract</summary>The aim of this talk is not to dive deep into any particular topic or theorem, but to motivate the study of optimal transport (OT) by outlining its connections with partial differential equations (PDEs). We will begin by reviewing basic OT theory, including the Monge problem, the Kantorovich problem, the dual problem, and Brenier's theorem. We will then briefly discuss the use of PDEs to study the regularity of optimal solutions to the Monge problem. Finally, I will outline some applications of OT theory to the study of PDEs. If time permits, I will talk about the appearance of the continuity equation in Wasserstein spaces and the JKO scheme.</details>
 
-*Unclaimed* - TBD (December 2nd)
+
+Ken - A geometric approach to calculus on metric measure spaces (December 9th)
 ------
 <hr>
-
-Ken - TBD (December 9th)
-------
-<hr>
+<details><summary>Abstract</summary>The space of Riemannian manifolds satisfying a lower bound on the Ricci curvature and an upper bound on the dimension is pre-compact in the Gromov-Hausdorff convergence. A natural question is: what are the limit spaces, and how can we characterize them? One way to do this is to search for properties which are “stable” with respect to Gromov-Hausdorff convergence. In particular, in this talk I will explain how the Sobolev spaces converge in a certain sense, and the limiting space coincides with a typical way to define Sobolev spaces on metric measure spaces.</details> 
